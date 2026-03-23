@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#ffffff" id="themeColor" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <title>BuildArk — We build the tools that carry your business forward.</title>
+  <style>
+    /* ── Reset ──────────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --purple-deep  : #26215C;
+      --purple       : #534AB7;
+      --amber        : #EF9F27;
+      --white        : #ffffff;
+
+      /* Aqua-blue underwater palette */
+      --aqua-bright  : #00B4D8;
+      --aqua         : #0096C7;
+      --aqua-dark    : #0077B6;
+      --navy         : #023E8A;
+      --navy-deep    : #03045E;
+
+      /* Dynamic viewport height — set by JS for iOS Safari */
+      --vh: 1vh;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      -webkit-text-size-adjust: 100%;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+                   'Helvetica Neue', Arial, sans-serif;
+      background: var(--white);
+      color: #1a1a2e;
+      overflow-x: hidden;
+      -webkit-tap-highlight-color: transparent;
+      overscroll-behavior-y: none;
+    }
+
+    /* ── NAV ────────────────────────────────────────────────── */
+    #navbar {
+      position: fixed;
+      inset: 0 0 auto 0;
+      z-index: 900;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      /* Safe area padding for notched phones */
+      padding: 0.85rem 2.5rem;
+      padding-left: max(2.5rem, env(safe-area-inset-left));
+      padding-right: max(2.5rem, env(safe-area-inset-right));
+      background: rgba(255,255,255,0.88);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(0,0,0,0.07);
+      transition: background 0.6s ease, border-color 0.6s ease;
+    }
+
+    #navbar.dark {
+      background: rgba(2, 62, 138, 0.9);
+      border-bottom-color: rgba(255,255,255,0.1);
+    }
+
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      text-decoration: none;
+      min-height: 44px; /* iOS tap target */
+    }
+
+    /* Nav logo: circular crop, no whitespace */
+    .nav-logo-wrap {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+
+    .nav-logo-wrap img {
+      width: 112%;
+      height: 112%;
+      margin: -6%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .nav-wordmark {
+      font-size: 1rem;
+      font-weight: 800;
+      letter-spacing: 0.18em;
+      color: var(--purple-deep);
+      transition: color 0.6s;
+    }
+
+    #navbar.dark .nav-wordmark { color: var(--white); }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 2.5rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 0.88rem;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      text-decoration: none;
+      color: var(--purple-deep);
+      min-height: 44px;
+      display: flex;
+      align-items: center;
+      transition: color 0.3s;
+    }
+
+    #navbar.dark .nav-links a { color: rgba(255,255,255,0.85); }
+    .nav-links a:hover       { color: var(--aqua-dark); }
+    #navbar.dark .nav-links a:hover { color: var(--white); }
+
+    .nav-cta {
+      padding: 0.5rem 1.3rem !important;
+      border-radius: 7px;
+      background: var(--aqua-dark) !important;
+      color: var(--white) !important;
+      font-weight: 600 !important;
+      min-height: 40px !important;
+      transition: background 0.3s, transform 0.2s !important;
+    }
+
+    .nav-cta:hover { background: var(--navy) !important; transform: translateY(-1px); }
+
+    #navbar.dark .nav-cta {
+      background: var(--white) !important;
+      color: var(--aqua-dark) !important;
+    }
+
+    /* Hamburger */
+    .nav-hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 10px;
+      margin: -10px;
+      min-width: 44px;
+      min-height: 44px;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .nav-hamburger span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--purple-deep);
+      border-radius: 2px;
+      transition: background 0.5s, transform 0.3s, opacity 0.3s;
+      transform-origin: center;
+    }
+
+    #navbar.dark .nav-hamburger span { background: white; }
+
+    .nav-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .nav-hamburger.open span:nth-child(2) { opacity: 0; }
+    .nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    /* Mobile drawer */
+    #mobileMenu {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 850;
+      background: rgba(0, 119, 182, 0.97);
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 2.75rem;
+      padding-bottom: env(safe-area-inset-bottom);
+    }
+
+    #mobileMenu a {
+      color: white;
+      font-size: 1.6rem;
+      font-weight: 700;
+      text-decoration: none;
+      letter-spacing: 0.08em;
+      min-height: 44px;
+      display: flex;
+      align-items: center;
+    }
+
+    #mobileMenu a.cta-mobile { color: var(--amber); }
+
+    /* ── HERO ───────────────────────────────────────────────── */
+    #hero {
+      position: relative;
+      /* 165vh gives a brisk but satisfying flood — JS sets --vh for iOS */
+      height: calc(var(--vh, 1vh) * 165);
+    }
+
+    .hero-stage {
+      position: sticky;
+      top: 0;
+      height: calc(var(--vh, 1vh) * 100);
+      overflow: hidden;
+      background: var(--white);
+      transition: background 1s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .hero-stage.flooded { background: var(--navy); }
+
+    /* Logo + tagline centred */
+    .hero-center {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      z-index: 10;
+      padding: 6rem 1.5rem 2rem;
+      text-align: center;
+      gap: 1.3rem;
+    }
+
+    /* Circular clip to remove JPG whitespace */
+    .hero-logo-wrap {
+      width: clamp(180px, 42vw, 280px);
+      height: clamp(180px, 42vw, 280px);
+      border-radius: 50%;
+      overflow: hidden;
+      flex-shrink: 0;
+      filter: drop-shadow(0 6px 32px rgba(0,0,0,0.15));
+      transition: filter 0.8s;
+    }
+
+    .hero-stage.flooded .hero-logo-wrap {
+      filter: drop-shadow(0 6px 40px rgba(0,0,0,0.4));
+    }
+
+    .hero-logo {
+      /* Scale up slightly to clip the white margin inside the JPG */
+      width: 114%;
+      height: 114%;
+      margin: -7%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .hero-tagline {
+      font-size: clamp(0.98rem, 2.4vw, 1.3rem);
+      font-weight: 400;
+      color: var(--purple-deep);
+      letter-spacing: 0.01em;
+      max-width: 460px;
+      line-height: 1.65;
+      transition: color 0.9s;
+    }
+
+    .hero-stage.flooded .hero-tagline { color: rgba(255,255,255,0.92); }
+
+    /* Scroll hint */
+    .scroll-hint {
+      position: absolute;
+      bottom: max(2rem, env(safe-area-inset-bottom));
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 10;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.45rem;
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--aqua-dark);
+      opacity: 1;
+      transition: opacity 0.5s, color 0.8s;
+      pointer-events: none;
+      white-space: nowrap;
+    }
+
+    .scroll-hint.gone { opacity: 0; }
+    .hero-stage.flooded .scroll-hint { color: rgba(255,255,255,0.6); }
+    .scroll-hint svg { animation: bounce 2s ease-in-out infinite; }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50%       { transform: translateY(7px); }
+    }
+
+    /* Wave canvas */
+    .wave-layer {
+      position: absolute;
+      inset: 0;
+      z-index: 5;
+      pointer-events: none;
+    }
+
+    #waveCanvas {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    /* ── SECTIONS ───────────────────────────────────────────── */
+    section:not(#hero) {
+      padding: 6rem 2rem;
+      padding-left: max(2rem, env(safe-area-inset-left));
+      padding-right: max(2rem, env(safe-area-inset-right));
+    }
+
+    /* Services */
+    #services { background: var(--aqua-dark); }
+
+    .s-heading {
+      font-size: clamp(1.75rem, 5vw, 2.6rem);
+      font-weight: 800;
+      text-align: center;
+      color: var(--white);
+      letter-spacing: -0.025em;
+      margin-bottom: 0.6rem;
+    }
+
+    .s-sub {
+      text-align: center;
+      color: rgba(255,255,255,0.65);
+      font-size: 1rem;
+      margin-bottom: 3.5rem;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+      max-width: 1080px;
+      margin: 0 auto;
+    }
+
+    .card {
+      background: rgba(255,255,255,0.07);
+      border: 1.5px solid rgba(255,255,255,0.2);
+      border-radius: 14px;
+      padding: 2.25rem 1.75rem;
+      transition: background 0.3s, transform 0.3s, border-color 0.3s;
+    }
+
+    /* On mobile, avoid hover states that get stuck on touch */
+    @media (hover: hover) {
+      .card:hover {
+        background: rgba(255,255,255,0.14);
+        border-color: rgba(255,255,255,0.4);
+        transform: translateY(-5px);
+      }
+    }
+
+    .card-icon { width: 52px; height: 52px; margin-bottom: 1.4rem; }
+
+    .card h3 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 0.75rem;
+    }
+
+    .card p {
+      font-size: 0.95rem;
+      color: rgba(255,255,255,0.78);
+      line-height: 1.7;
+    }
+
+    /* About */
+    #about {
+      background: var(--navy);
+      text-align: center;
+    }
+
+    .about-body {
+      max-width: 700px;
+      margin: 1.5rem auto 0;
+      font-size: 1.08rem;
+      color: rgba(255,255,255,0.88);
+      line-height: 1.85;
+    }
+
+    /* Accent line */
+    .accent-line {
+      width: 56px;
+      height: 3px;
+      background: var(--amber);
+      border-radius: 2px;
+      margin: 1rem auto 0;
+    }
+
+    /* Contact */
+    #contact {
+      background: var(--purple-deep);
+      text-align: center;
+    }
+
+    .cta-btn {
+      display: inline-block;
+      margin-top: 2.25rem;
+      padding: 1rem 2.75rem;
+      background: var(--white);
+      color: var(--navy);
+      font-size: 1.05rem;
+      font-weight: 700;
+      border-radius: 9px;
+      text-decoration: none;
+      letter-spacing: 0.04em;
+      min-height: 52px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.25s, box-shadow 0.25s;
+      touch-action: manipulation;
+    }
+
+    @media (hover: hover) {
+      .cta-btn:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 40px rgba(0,0,0,0.25);
+      }
+    }
+
+    .cta-email {
+      display: block;
+      margin-top: 1.25rem;
+      font-size: 0.88rem;
+      color: rgba(255,255,255,0.4);
+      letter-spacing: 0.06em;
+    }
+
+    /* Footer */
+    footer {
+      background: var(--purple-deep);
+      border-top: 1px solid rgba(255,255,255,0.07);
+      text-align: center;
+      padding: 1.6rem 2rem;
+      padding-bottom: max(1.6rem, env(safe-area-inset-bottom));
+      color: rgba(255,255,255,0.35);
+      font-size: 0.8rem;
+      letter-spacing: 0.05em;
+    }
+
+    /* ── RESPONSIVE ─────────────────────────────────────────── */
+    @media (max-width: 700px) {
+      .nav-links      { display: none; }
+      .nav-hamburger  { display: flex; }
+      #navbar         { padding: 0.85rem 1.4rem; }
+
+      section:not(#hero) { padding: 4.5rem 1.25rem; }
+
+      .cards { grid-template-columns: 1fr; }
+
+      .hero-center { gap: 1rem; }
+    }
+
+    @media (max-width: 380px) {
+      .hero-logo-wrap {
+        width: clamp(150px, 55vw, 200px);
+        height: clamp(150px, 55vw, 200px);
+      }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ══ NAV ══════════════════════════════════════════════════════ -->
+<nav id="navbar">
+  <a class="nav-brand" href="#">
+    <div class="nav-logo-wrap">
+      <img src="buildarklogo.jpg" alt="BuildArk logo" />
+    </div>
+    <span class="nav-wordmark">BUILDARK</span>
+  </a>
+
+  <ul class="nav-links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#contact" class="nav-cta">Let's Talk</a></li>
+  </ul>
+
+  <button class="nav-hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- Mobile drawer -->
+<div id="mobileMenu" role="dialog" aria-modal="true" aria-label="Navigation">
+  <a href="#services" id="m-services">Services</a>
+  <a href="#about"    id="m-about">About</a>
+  <a href="#contact"  id="m-contact" class="cta-mobile">Let's Talk</a>
+</div>
+
+<!-- ══ HERO ══════════════════════════════════════════════════════ -->
+<section id="hero">
+  <div class="hero-stage" id="heroStage">
+
+    <!-- Wave canvas -->
+    <div class="wave-layer">
+      <canvas id="waveCanvas"></canvas>
+    </div>
+
+    <!-- Logo + tagline -->
+    <div class="hero-center">
+      <div class="hero-logo-wrap">
+        <img class="hero-logo" src="buildarklogo.jpg" alt="BuildArk" />
+      </div>
+      <p class="hero-tagline">We build the tools that carry your business forward.</p>
+    </div>
+
+    <!-- Scroll hint -->
+    <div class="scroll-hint" id="scrollHint">
+      <span>Scroll to explore</span>
+      <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+           stroke="currentColor" stroke-width="2" stroke-linecap="round">
+        <line x1="10" y1="3" x2="10" y2="17"/>
+        <polyline points="4,11 10,17 16,11"/>
+      </svg>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══ SERVICES ══════════════════════════════════════════════════ -->
+<section id="services">
+  <h2 class="s-heading">What We Build</h2>
+  <p class="s-sub">End-to-end solutions designed around your business</p>
+
+  <div class="cards">
+
+    <div class="card">
+      <svg class="card-icon" viewBox="0 0 52 52" fill="none">
+        <rect x="4" y="10" width="44" height="32" rx="4" stroke="#00B4D8" stroke-width="2.5"/>
+        <path d="M14 26l6 5-6 5" stroke="#EF9F27" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M26 36h12" stroke="#EF9F27" stroke-width="2.5" stroke-linecap="round"/>
+        <path d="M10 18h8M10 18v4M18 18v4" stroke="#00B4D8" stroke-width="1.5" stroke-linecap="round"/>
+        <circle cx="22" cy="22" r="1.5" fill="#00B4D8"/>
+      </svg>
+      <h3>Custom Apps</h3>
+      <p>We modernize how your business operates with tailored applications built to fit your exact workflow — not the other way around.</p>
+    </div>
+
+    <div class="card">
+      <svg class="card-icon" viewBox="0 0 52 52" fill="none">
+        <circle cx="26" cy="26" r="20" stroke="#00B4D8" stroke-width="2.5"/>
+        <path d="M6 26h40"              stroke="#00B4D8" stroke-width="2"/>
+        <path d="M26 6c-5 7-5 27 0 40" stroke="#EF9F27" stroke-width="2" stroke-linecap="round"/>
+        <path d="M26 6c5 7 5 27 0 40"  stroke="#EF9F27" stroke-width="2" stroke-linecap="round"/>
+        <path d="M10 16h32M10 36h32"   stroke="#00B4D8" stroke-width="1.5" stroke-linecap="round" opacity="0.55"/>
+      </svg>
+      <h3>Web Presence</h3>
+      <p>Landing pages and full websites that look credible, load fast, and are built to convert first-time visitors into loyal customers.</p>
+    </div>
+
+    <div class="card">
+      <svg class="card-icon" viewBox="0 0 52 52" fill="none">
+        <rect x="15" y="4" width="22" height="44" rx="4" stroke="#00B4D8" stroke-width="2.5"/>
+        <path d="M22 44h8" stroke="#EF9F27" stroke-width="2.5" stroke-linecap="round"/>
+        <rect x="19" y="11" width="14" height="9" rx="2" fill="#00B4D8" opacity="0.35"/>
+        <rect x="19" y="24" width="14" height="9" rx="2" fill="#00B4D8" opacity="0.2"/>
+        <circle cx="26" cy="8" r="1.5" fill="#00B4D8"/>
+      </svg>
+      <h3>Our Products</h3>
+      <p>Two of our own apps live on the App Store — built for everyday users with the same craft and care we bring to every client.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══ ABOUT ══════════════════════════════════════════════════════ -->
+<section id="about">
+  <h2 class="s-heading">Why BuildArk?</h2>
+  <div class="accent-line"></div>
+  <p class="about-body">
+    We are a personalized technology partner for small businesses, startups, and growing
+    companies. We replace outdated workflows with smart tools, and build digital presences
+    that make you stand out — all with hands-on service that big agencies simply can't offer.
+  </p>
+</section>
+
+<!-- ══ CONTACT ══════════════════════════════════════════════════ -->
+<section id="contact">
+  <h2 class="s-heading">Ready to build something?</h2>
+  <div class="accent-line"></div>
+  <a class="cta-btn" href="mailto:hello@buildark.io">Let's Talk</a>
+  <span class="cta-email">hello@buildark.io</span>
+</section>
+
+<!-- ══ FOOTER ═══════════════════════════════════════════════════ -->
+<footer>
+  &copy; 2026 BuildArk. All rights reserved.
+</footer>
+
+<!-- ══ SCRIPTS ═══════════════════════════════════════════════════ -->
+<script>
+  /* ──────────────────────────────────────────────────────────
+     iOS Safari viewport height fix
+     100vh includes the browser chrome bar on iOS, causing
+     layout shifts. We use a --vh custom property instead.
+  ────────────────────────────────────────────────────────── */
+  function setVH() {
+    const vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty('--vh', `${vh}px`);
+  }
+  setVH();
+  window.addEventListener('resize', setVH, { passive: true });
+  /* Also fire on orientation change — iOS fires resize late */
+  window.addEventListener('orientationchange', () => {
+    setTimeout(setVH, 200);
+  }, { passive: true });
+
+  /* ──────────────────────────────────────────────────────────
+     Mobile nav
+  ────────────────────────────────────────────────────────── */
+  const hamburger   = document.getElementById('hamburger');
+  const mobileMenu  = document.getElementById('mobileMenu');
+
+  function openMenu() {
+    mobileMenu.style.display = 'flex';
+    hamburger.classList.add('open');
+    hamburger.setAttribute('aria-expanded', 'true');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeMenu() {
+    mobileMenu.style.display = 'none';
+    hamburger.classList.remove('open');
+    hamburger.setAttribute('aria-expanded', 'false');
+    document.body.style.overflow = '';
+  }
+
+  hamburger.addEventListener('click', () => {
+    mobileMenu.style.display === 'flex' ? closeMenu() : openMenu();
+  });
+
+  ['m-services', 'm-about', 'm-contact'].forEach(id => {
+    document.getElementById(id).addEventListener('click', closeMenu);
+  });
+
+  /* ──────────────────────────────────────────────────────────
+     Canvas wave setup
+  ────────────────────────────────────────────────────────── */
+  const heroEl     = document.getElementById('hero');
+  const heroStage  = document.getElementById('heroStage');
+  const navbar     = document.getElementById('navbar');
+  const scrollHint = document.getElementById('scrollHint');
+  const themeColor = document.getElementById('themeColor');
+  const canvas     = document.getElementById('waveCanvas');
+  const ctx        = canvas.getContext('2d');
+
+  let wavePhase  = 0;
+  let scrollProg = 0;
+  let canvasW    = 0;
+  let canvasH    = 0;
+  let dpr        = 1;
+
+  function resizeCanvas() {
+    dpr     = Math.min(window.devicePixelRatio || 1, 2); // cap at 2× for perf
+    canvasW = canvas.offsetWidth;
+    canvasH = canvas.offsetHeight;
+    canvas.width  = canvasW * dpr;
+    canvas.height = canvasH * dpr;
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+  }
+
+  window.addEventListener('resize', resizeCanvas, { passive: true });
+  resizeCanvas();
+
+  /* ──────────────────────────────────────────────────────────
+     Draw one wave layer
+     color    — fill colour
+     baseY    — crest Y position (logical px; 0 = top, canvasH = bottom)
+     amp      — wave amplitude
+     freq     — how many full wave cycles across the canvas width
+     phaseOff — phase offset for parallax differentiation
+  ────────────────────────────────────────────────────────── */
+  function drawWave(color, baseY, amp, freq, phaseOff) {
+    ctx.beginPath();
+    ctx.moveTo(0, canvasH);
+
+    const step = 3;
+    for (let x = 0; x <= canvasW; x += step) {
+      const angle = (x / canvasW) * Math.PI * 2 * freq + wavePhase + phaseOff;
+      const y     = baseY + Math.sin(angle) * amp;
+      ctx.lineTo(x, y);
+    }
+
+    ctx.lineTo(canvasW, canvasH);
+    ctx.closePath();
+    ctx.fillStyle = color;
+    ctx.fill();
+  }
+
+  /* ──────────────────────────────────────────────────────────
+     Animation loop (requestAnimationFrame)
+  ────────────────────────────────────────────────────────── */
+  function animate() {
+    wavePhase += 0.02;  // wave oscillation speed
+
+    ctx.clearRect(0, 0, canvasW, canvasH);
+
+    if (scrollProg > 0.005) {
+      /* Map scroll 0→0.38 → ease 0→1 for a brisk but cinematic flood */
+      const t    = Math.min(scrollProg / 0.38, 1);
+      const ease = t < 0.5
+        ? 2 * t * t
+        : 1 - Math.pow(-2 * t + 2, 2) / 2;  // ease-in-out quad
+
+      /* Background wave: deeper colour, slightly slower rise */
+      const bgBase = canvasH - ease * canvasH * 1.06;
+      drawWave('#0077B6', bgBase, 24, 1.5, Math.PI * 0.45);
+
+      /* Foreground wave: bright aqua, faster rise */
+      const fgBase = canvasH - ease * canvasH * 1.14;
+      drawWave('#00B4D8', fgBase, 17, 2.0, 0);
+    }
+
+    requestAnimationFrame(animate);
+  }
+
+  animate();
+
+  /* ──────────────────────────────────────────────────────────
+     Scroll listener — drives water level + colour transition
+     passive: true is required for smooth 60fps on mobile
+  ────────────────────────────────────────────────────────── */
+  function onScroll() {
+    const scrollable = heroEl.offsetHeight - window.innerHeight;
+    scrollProg = scrollable > 0
+      ? Math.min(Math.max(window.scrollY / scrollable, 0), 1)
+      : 0;
+
+    /* Flood colour flip at ~28% scroll progress */
+    const flooded = scrollProg > 0.27;
+    heroStage.classList.toggle('flooded', flooded);
+    navbar.classList.toggle('dark', flooded);
+
+    /* Update browser theme-color for Android Chrome */
+    themeColor.content = flooded ? '#023E8A' : '#ffffff';
+
+    /* Hide scroll hint after tiny scroll */
+    scrollHint.classList.toggle('gone', scrollProg > 0.04);
+  }
+
+  window.addEventListener('scroll', onScroll, { passive: true });
+
+  /* ──────────────────────────────────────────────────────────
+     Also update on visualViewport resize (iOS keyboard open/close,
+     address bar show/hide), which doesn't always fire 'resize'
+  ────────────────────────────────────────────────────────── */
+  if (window.visualViewport) {
+    window.visualViewport.addEventListener('resize', () => {
+      setVH();
+      resizeCanvas();
+    }, { passive: true });
+  }
+</script>
+
+</body>
+</html>
