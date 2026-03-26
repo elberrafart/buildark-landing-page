@@ -137,6 +137,21 @@
 
     .nav-cta:hover { background: var(--navy) !important; transform: translateY(-1px); }
 
+    /* Instagram link in footer */
+    .footer-ig {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: rgba(255,255,255,0.45);
+      text-decoration: none;
+      font-size: 0.8rem;
+      letter-spacing: 0.05em;
+      margin-top: 0.6rem;
+      transition: color 0.25s;
+    }
+    .footer-ig:hover { color: rgba(255,255,255,0.85); }
+    .footer-ig svg   { flex-shrink: 0; }
+
     #navbar.dark .nav-cta {
       background: var(--white) !important;
       color: var(--aqua-dark) !important;
@@ -219,16 +234,16 @@
 
     .hero-stage.flooded { background: var(--navy); }
 
-    /* Logo + tagline centred */
+    /* Logo + tagline — sit above the mountain peak */
     .hero-center {
       position: absolute;
       inset: 0;
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: center;
+      justify-content: flex-start;
       z-index: 10;
-      padding: 6rem 1.5rem 2rem;
+      padding: max(5rem, 13vh) 1.5rem 2rem;
       text-align: center;
       gap: 1.3rem;
     }
@@ -449,6 +464,10 @@
     footer {
       background: var(--purple-deep);
       border-top: 1px solid rgba(255,255,255,0.07);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.35rem;
       text-align: center;
       padding: 1.6rem 2rem;
       padding-bottom: max(1.6rem, env(safe-area-inset-bottom));
@@ -492,7 +511,7 @@
   <ul class="nav-links">
     <li><a href="#services">Services</a></li>
     <li><a href="#about">About</a></li>
-    <li><a href="#contact" class="nav-cta">Let's Talk</a></li>
+    <li><a href="https://www.instagram.com/buildarksolutions/" target="_blank" rel="noopener" class="nav-cta">Let's Talk</a></li>
   </ul>
 
   <button class="nav-hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
@@ -504,7 +523,7 @@
 <div id="mobileMenu" role="dialog" aria-modal="true" aria-label="Navigation">
   <a href="#services" id="m-services">Services</a>
   <a href="#about"    id="m-about">About</a>
-  <a href="#contact"  id="m-contact" class="cta-mobile">Let's Talk</a>
+  <a href="https://www.instagram.com/buildarksolutions/" target="_blank" rel="noopener" id="m-contact" class="cta-mobile">Let's Talk</a>
 </div>
 
 <!-- ══ HERO ══════════════════════════════════════════════════════ -->
@@ -598,13 +617,21 @@
 <section id="contact">
   <h2 class="s-heading">Ready to build something?</h2>
   <div class="accent-line"></div>
-  <a class="cta-btn" href="mailto:hello@buildark.io">Let's Talk</a>
+  <a class="cta-btn" href="https://www.instagram.com/buildarksolutions/" target="_blank" rel="noopener">Let's Talk</a>
   <span class="cta-email">hello@buildark.io</span>
 </section>
 
 <!-- ══ FOOTER ═══════════════════════════════════════════════════ -->
 <footer>
-  &copy; 2026 BuildArk. All rights reserved.
+  <div>&copy; 2026 BuildArk. All rights reserved.</div>
+  <a class="footer-ig" href="https://www.instagram.com/buildarksolutions/" target="_blank" rel="noopener" aria-label="BuildArk on Instagram">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+      <circle cx="12" cy="12" r="4.5"/>
+      <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>
+    </svg>
+    @buildarksolutions
+  </a>
 </footer>
 
 <!-- ══ SCRIPTS ═══════════════════════════════════════════════════ -->
@@ -683,6 +710,73 @@
   resizeCanvas();
 
   /* ──────────────────────────────────────────────────────────
+     Mountain — drawn before waves so water covers it naturally.
+     Peak sits at ~60 % of canvas height; brand dark-purple palette.
+  ────────────────────────────────────────────────────────── */
+  function drawMountain() {
+    const cx    = canvasW / 2;
+    const peakY = canvasH * 0.60;
+
+    /* ── Main body ───────────────────────────────────────── */
+    ctx.beginPath();
+    ctx.moveTo(-20,            canvasH + 20);
+    ctx.lineTo(canvasW * 0.04, canvasH * 0.90);
+    ctx.lineTo(canvasW * 0.18, canvasH * 0.78);
+    ctx.lineTo(canvasW * 0.28, canvasH * 0.73);
+    ctx.lineTo(canvasW * 0.35, canvasH * 0.78);
+    ctx.lineTo(canvasW * 0.41, canvasH * 0.66);
+    ctx.lineTo(canvasW * 0.46, peakY + canvasH * 0.06);
+    ctx.lineTo(cx,             peakY);                   // ← main peak
+    ctx.lineTo(canvasW * 0.55, peakY + canvasH * 0.055);
+    ctx.lineTo(canvasW * 0.60, canvasH * 0.65);
+    ctx.lineTo(canvasW * 0.67, canvasH * 0.72);
+    ctx.lineTo(canvasW * 0.73, canvasH * 0.67);
+    ctx.lineTo(canvasW * 0.82, canvasH * 0.77);
+    ctx.lineTo(canvasW * 0.96, canvasH * 0.90);
+    ctx.lineTo(canvasW + 20,   canvasH + 20);
+    ctx.closePath();
+
+    const grad = ctx.createLinearGradient(cx, peakY, cx, canvasH);
+    grad.addColorStop(0,   '#26215C');
+    grad.addColorStop(0.5, '#1c1840');
+    grad.addColorStop(1,   '#0f0d28');
+    ctx.fillStyle = grad;
+    ctx.fill();
+
+    /* ── Right sunlit face ───────────────────────────────── */
+    ctx.beginPath();
+    ctx.moveTo(cx,             peakY);
+    ctx.lineTo(canvasW * 0.55, peakY + canvasH * 0.055);
+    ctx.lineTo(canvasW * 0.53, canvasH * 0.70);
+    ctx.lineTo(cx + 18,        peakY + canvasH * 0.10);
+    ctx.closePath();
+    ctx.fillStyle = 'rgba(83, 74, 183, 0.38)';
+    ctx.fill();
+
+    /* ── Left edge highlight ─────────────────────────────── */
+    ctx.beginPath();
+    ctx.moveTo(cx,             peakY);
+    ctx.lineTo(canvasW * 0.46, peakY + canvasH * 0.06);
+    ctx.lineTo(canvasW * 0.47, canvasH * 0.70);
+    ctx.lineTo(cx - 16,        peakY + canvasH * 0.09);
+    ctx.closePath();
+    ctx.fillStyle = 'rgba(255, 255, 255, 0.05)';
+    ctx.fill();
+
+    /* ── Snow cap — fades as the water rises ─────────────── */
+    const snowAlpha = Math.max(0, 1 - scrollProg * 9);
+    if (snowAlpha > 0.01) {
+      ctx.beginPath();
+      ctx.moveTo(cx,                    peakY);
+      ctx.lineTo(cx + canvasW * 0.024,  peakY + canvasH * 0.042);
+      ctx.lineTo(cx - canvasW * 0.018,  peakY + canvasH * 0.036);
+      ctx.closePath();
+      ctx.fillStyle = `rgba(255, 255, 255, ${snowAlpha * 0.78})`;
+      ctx.fill();
+    }
+  }
+
+  /* ──────────────────────────────────────────────────────────
      Draw one wave layer
      color    — fill colour
      baseY    — crest Y position (logical px; 0 = top, canvasH = bottom)
@@ -714,6 +808,9 @@
     wavePhase += 0.02;  // wave oscillation speed
 
     ctx.clearRect(0, 0, canvasW, canvasH);
+
+    // Mountain always visible — water covers it as progress increases
+    drawMountain();
 
     if (scrollProg > 0.005) {
       /* Map scroll 0→0.38 → ease 0→1 for a brisk but cinematic flood */
