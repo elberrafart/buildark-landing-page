@@ -6,7 +6,84 @@
   <meta name="theme-color" content="#ffffff" id="themeColor" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="default" />
-  <title>BuildArk — We build the tools that carry your business forward.</title>
+  <title>BuildArk — Custom Web Design &amp; App Development for Small Businesses</title>
+
+  <!-- SEO Meta -->
+  <meta name="description" content="BuildArk builds custom websites, landing pages, and apps for small businesses, startups, and growing companies. Get a polished digital presence and modern tools that fit the way you work." />
+  <meta name="keywords" content="custom web design small business, landing page design, app development, web presence, small business website, BuildArk" />
+  <meta name="robots" content="index, follow" />
+  <meta name="author" content="BuildArk" />
+  <link rel="canonical" href="https://buildark-landing.vercel.app/" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="BuildArk" />
+  <meta property="og:title" content="BuildArk — Custom Web Design &amp; App Development for Small Businesses" />
+  <meta property="og:description" content="BuildArk builds custom websites, landing pages, and apps for small businesses, startups, and growing companies. Modern tools. Hands-on service. Built to scale." />
+  <meta property="og:url" content="https://buildark-landing.vercel.app/" />
+  <meta property="og:image" content="https://buildark-landing.vercel.app/buildarklogo.jpg" />
+  <meta property="og:image:alt" content="BuildArk logo — custom web design and app development" />
+  <meta property="og:locale" content="en_US" />
+
+  <!-- Twitter/X Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="BuildArk — Custom Web Design &amp; App Development for Small Businesses" />
+  <meta name="twitter:description" content="BuildArk builds custom websites, landing pages, and apps for small businesses. Modern tools. Hands-on service. Built to scale." />
+  <meta name="twitter:image" content="https://buildark-landing.vercel.app/buildarklogo.jpg" />
+  <meta name="twitter:site" content="@buildarksolutions" />
+
+  <!-- JSON-LD: ProfessionalService -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "@id": "https://buildark-landing.vercel.app/#organization",
+    "name": "BuildArk",
+    "url": "https://buildark-landing.vercel.app/",
+    "logo": "https://buildark-landing.vercel.app/buildarklogo.jpg",
+    "image": "https://buildark-landing.vercel.app/buildarklogo.jpg",
+    "description": "BuildArk is a personalized technology partner for small businesses, startups, and growing companies. We build custom websites, landing pages, and applications that modernize how businesses operate and help them stand out online.",
+    "email": "hello@buildark.io",
+    "sameAs": ["https://www.instagram.com/buildarksolutions/"],
+    "areaServed": "US",
+    "serviceType": ["Web Design", "Landing Page Design", "Custom App Development", "Web Presence"],
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "BuildArk Services",
+      "itemListElement": [
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Custom App Development", "description": "Tailored applications built to fit your exact workflow." } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Web Presence — Landing Pages & Websites", "description": "Landing pages and full websites that look credible, load fast, and convert visitors." } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Own Products", "description": "Consumer apps published on the App Store." } }
+      ]
+    }
+  }
+  </script>
+
+  <!-- JSON-LD: WebSite -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "BuildArk",
+    "url": "https://buildark-landing.vercel.app/"
+  }
+  </script>
+
+  <!-- JSON-LD: FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      { "@type": "Question", "name": "What does BuildArk do?", "acceptedAnswer": { "@type": "Answer", "text": "BuildArk is a technology partner for small businesses, startups, and growing companies. We build custom websites, landing pages, and applications that modernize how businesses operate and help them stand out online — all with hands-on, personalized service." } },
+      { "@type": "Question", "name": "What services does BuildArk offer?", "acceptedAnswer": { "@type": "Answer", "text": "BuildArk offers three core services: custom app development tailored to your business workflow; web presence services including landing pages and full websites designed to convert visitors; and our own consumer apps published on the App Store." } },
+      { "@type": "Question", "name": "Who is BuildArk for?", "acceptedAnswer": { "@type": "Answer", "text": "BuildArk is built for small businesses, startups, and growing companies that want a personalized technology partner — especially those that lack in-house tech expertise." } },
+      { "@type": "Question", "name": "Does BuildArk build websites for small businesses?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. BuildArk specializes in building landing pages and full websites for small businesses. Every site is designed to look credible, load fast on mobile, and convert first-time visitors into loyal customers." } },
+      { "@type": "Question", "name": "How can I contact BuildArk?", "acceptedAnswer": { "@type": "Answer", "text": "You can reach BuildArk by emailing hello@buildark.io or by messaging on Instagram at @buildarksolutions." } }
+    ]
+  }
+  </script>
+
   <style>
     /* ── Reset ──────────────────────────────────────────────── */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -420,6 +497,34 @@
       margin: 1rem auto 0;
     }
 
+    /* FAQ */
+    #faq {
+      background: var(--purple-deep);
+      text-align: center;
+    }
+
+    .faq-list {
+      max-width: 700px;
+      margin: 2rem auto 0;
+      text-align: left;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    .faq-q {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 0.5rem;
+    }
+
+    .faq-a {
+      font-size: 0.95rem;
+      color: rgba(255,255,255,0.78);
+      line-height: 1.7;
+    }
+
     /* Contact */
     #contact {
       background: var(--purple-deep);
@@ -500,10 +605,10 @@
 <body>
 
 <!-- ══ NAV ══════════════════════════════════════════════════════ -->
-<nav id="navbar">
-  <a class="nav-brand" href="#">
+<nav id="navbar" aria-label="Main navigation">
+  <a class="nav-brand" href="#" aria-label="BuildArk home">
     <div class="nav-logo-wrap">
-      <img src="buildarklogo.jpg" alt="BuildArk logo" />
+      <img src="buildarklogo.jpg" alt="BuildArk — custom web design and app development for small businesses" width="36" height="36" />
     </div>
     <span class="nav-wordmark">BUILDARK</span>
   </a>
@@ -511,7 +616,8 @@
   <ul class="nav-links">
     <li><a href="#services">Services</a></li>
     <li><a href="#about">About</a></li>
-    <li><a href="https://www.instagram.com/buildarksolutions/" target="_blank" rel="noopener" class="nav-cta">Let's Talk</a></li>
+    <li><a href="#faq">FAQ</a></li>
+    <li><a href="mailto:hello@buildark.io" class="nav-cta">Let's Talk</a></li>
   </ul>
 
   <button class="nav-hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
@@ -523,7 +629,8 @@
 <div id="mobileMenu" role="dialog" aria-modal="true" aria-label="Navigation">
   <a href="#services" id="m-services">Services</a>
   <a href="#about"    id="m-about">About</a>
-  <a href="https://www.instagram.com/buildarksolutions/" target="_blank" rel="noopener" id="m-contact" class="cta-mobile">Let's Talk</a>
+  <a href="#faq"      id="m-faq">FAQ</a>
+  <a href="mailto:hello@buildark.io" id="m-contact" class="cta-mobile">Let's Talk</a>
 </div>
 
 <!-- ══ HERO ══════════════════════════════════════════════════════ -->
@@ -538,9 +645,9 @@
     <!-- Logo + tagline -->
     <div class="hero-center">
       <div class="hero-logo-wrap">
-        <img class="hero-logo" src="buildarklogo.jpg" alt="BuildArk" />
+        <img class="hero-logo" src="buildarklogo.jpg" alt="BuildArk — custom web design and app development for small businesses" width="280" height="280" />
       </div>
-      <p class="hero-tagline">We build the tools that carry your business forward.</p>
+      <h1 class="hero-tagline">Custom Websites &amp; Apps for Small Businesses</h1>
     </div>
 
     <!-- Scroll hint -->
@@ -557,14 +664,14 @@
 </section>
 
 <!-- ══ SERVICES ══════════════════════════════════════════════════ -->
-<section id="services">
-  <h2 class="s-heading">What We Build</h2>
+<section id="services" aria-labelledby="services-heading">
+  <h2 class="s-heading" id="services-heading">What We Build</h2>
   <p class="s-sub">End-to-end solutions designed around your business</p>
 
   <div class="cards">
 
     <div class="card">
-      <svg class="card-icon" viewBox="0 0 52 52" fill="none">
+      <svg class="card-icon" viewBox="0 0 52 52" fill="none" aria-hidden="true">
         <rect x="4" y="10" width="44" height="32" rx="4" stroke="#00B4D8" stroke-width="2.5"/>
         <path d="M14 26l6 5-6 5" stroke="#EF9F27" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
         <path d="M26 36h12" stroke="#EF9F27" stroke-width="2.5" stroke-linecap="round"/>
@@ -576,7 +683,7 @@
     </div>
 
     <div class="card">
-      <svg class="card-icon" viewBox="0 0 52 52" fill="none">
+      <svg class="card-icon" viewBox="0 0 52 52" fill="none" aria-hidden="true">
         <circle cx="26" cy="26" r="20" stroke="#00B4D8" stroke-width="2.5"/>
         <path d="M6 26h40"              stroke="#00B4D8" stroke-width="2"/>
         <path d="M26 6c-5 7-5 27 0 40" stroke="#EF9F27" stroke-width="2" stroke-linecap="round"/>
@@ -588,7 +695,7 @@
     </div>
 
     <div class="card">
-      <svg class="card-icon" viewBox="0 0 52 52" fill="none">
+      <svg class="card-icon" viewBox="0 0 52 52" fill="none" aria-hidden="true">
         <rect x="15" y="4" width="22" height="44" rx="4" stroke="#00B4D8" stroke-width="2.5"/>
         <path d="M22 44h8" stroke="#EF9F27" stroke-width="2.5" stroke-linecap="round"/>
         <rect x="19" y="11" width="14" height="9" rx="2" fill="#00B4D8" opacity="0.35"/>
@@ -603,21 +710,51 @@
 </section>
 
 <!-- ══ ABOUT ══════════════════════════════════════════════════════ -->
-<section id="about">
-  <h2 class="s-heading">Why BuildArk?</h2>
+<section id="about" aria-labelledby="about-heading">
+  <h2 class="s-heading" id="about-heading">Why BuildArk?</h2>
   <div class="accent-line"></div>
   <p class="about-body">
     We are a personalized technology partner for small businesses, startups, and growing
     companies. We replace outdated workflows with smart tools, and build digital presences
     that make you stand out — all with hands-on service that big agencies simply can't offer.
+    Whether you need a landing page that converts, a full website redesign, or a custom app
+    built around your team's workflow, we deliver solutions that scale with your business.
   </p>
 </section>
 
-<!-- ══ CONTACT ══════════════════════════════════════════════════ -->
-<section id="contact">
-  <h2 class="s-heading">Ready to build something?</h2>
+<!-- ══ FAQ ═══════════════════════════════════════════════════════ -->
+<section id="faq" aria-labelledby="faq-heading">
+  <h2 class="s-heading" id="faq-heading">Frequently Asked Questions</h2>
   <div class="accent-line"></div>
-  <a class="cta-btn" href="https://www.instagram.com/buildarksolutions/" target="_blank" rel="noopener">Let's Talk</a>
+  <div class="faq-list">
+    <div class="faq-item">
+      <h3 class="faq-q">What does BuildArk do?</h3>
+      <p class="faq-a">BuildArk is a technology partner for small businesses, startups, and growing companies. We build custom websites, landing pages, and applications that modernize how businesses operate and help them stand out online — all with hands-on, personalized service.</p>
+    </div>
+    <div class="faq-item">
+      <h3 class="faq-q">What services does BuildArk offer?</h3>
+      <p class="faq-a">BuildArk offers three core services: custom app development tailored to your business workflow; web presence services including landing pages and full websites designed to convert visitors; and our own consumer apps published on the App Store.</p>
+    </div>
+    <div class="faq-item">
+      <h3 class="faq-q">Who is BuildArk for?</h3>
+      <p class="faq-a">BuildArk is built for small businesses, startups, and growing companies that want a personalized technology partner — especially those that lack in-house tech expertise.</p>
+    </div>
+    <div class="faq-item">
+      <h3 class="faq-q">Does BuildArk build websites for small businesses?</h3>
+      <p class="faq-a">Yes. BuildArk specializes in building landing pages and full websites for small businesses. Every site is designed to look credible, load fast on mobile, and convert first-time visitors into loyal customers.</p>
+    </div>
+    <div class="faq-item">
+      <h3 class="faq-q">How can I contact BuildArk?</h3>
+      <p class="faq-a">You can reach BuildArk by emailing hello@buildark.io or by messaging on Instagram at @buildarksolutions.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══ CONTACT ══════════════════════════════════════════════════ -->
+<section id="contact" aria-labelledby="contact-heading">
+  <h2 class="s-heading" id="contact-heading">Ready to build something?</h2>
+  <div class="accent-line"></div>
+  <a class="cta-btn" href="mailto:hello@buildark.io">Let's Talk</a>
   <span class="cta-email">hello@buildark.io</span>
 </section>
 
@@ -625,7 +762,7 @@
 <footer>
   <div>&copy; 2026 BuildArk. All rights reserved.</div>
   <a class="footer-ig" href="https://www.instagram.com/buildarksolutions/" target="_blank" rel="noopener" aria-label="BuildArk on Instagram">
-    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
       <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
       <circle cx="12" cy="12" r="4.5"/>
       <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>
@@ -676,7 +813,7 @@
     mobileMenu.style.display === 'flex' ? closeMenu() : openMenu();
   });
 
-  ['m-services', 'm-about', 'm-contact'].forEach(id => {
+  ['m-services', 'm-about', 'm-faq', 'm-contact'].forEach(id => {
     document.getElementById(id).addEventListener('click', closeMenu);
   });
 
