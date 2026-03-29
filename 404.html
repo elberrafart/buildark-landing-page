@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>404 — Lost at Sea | BuildArk</title>
+  <meta name="robots" content="noindex" />
+  <link rel="icon" type="image/png" href="/favicon.png" />
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #03045E;
+      color: #fff;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      position: relative;
+    }
+
+    /* Stars */
+    .stars {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+    }
+    .star {
+      position: absolute;
+      width: 2px;
+      height: 2px;
+      background: rgba(255,255,255,0.6);
+      border-radius: 50%;
+      animation: twinkle var(--d) ease-in-out infinite;
+    }
+    @keyframes twinkle {
+      0%, 100% { opacity: 0.2; }
+      50% { opacity: 1; }
+    }
+
+    /* Ocean */
+    .ocean {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 45%;
+      overflow: hidden;
+    }
+
+    .wave {
+      position: absolute;
+      width: 200%;
+      left: -50%;
+      border-radius: 40%;
+    }
+
+    .wave-1 {
+      height: 100px;
+      bottom: 60%;
+      background: rgba(0, 150, 199, 0.5);
+      animation: wave 6s linear infinite;
+    }
+    .wave-2 {
+      height: 120px;
+      bottom: 55%;
+      background: rgba(0, 119, 182, 0.6);
+      animation: wave 9s linear infinite reverse;
+    }
+    .wave-3 {
+      height: 140px;
+      bottom: 50%;
+      background: #0077B6;
+      animation: wave 12s linear infinite;
+    }
+    .wave-4 {
+      height: 200px;
+      bottom: 0;
+      background: #023E8A;
+    }
+
+    @keyframes wave {
+      0%   { transform: translateX(0) rotate(0deg); }
+      100% { transform: translateX(50%) rotate(360deg); }
+    }
+
+    /* Ship */
+    .ship-container {
+      position: relative;
+      z-index: 10;
+      margin-bottom: 80px;
+      animation: bob 3.5s ease-in-out infinite;
+      transform-origin: center bottom;
+    }
+
+    @keyframes bob {
+      0%   { transform: translateY(0px) rotate(-1.5deg); }
+      25%  { transform: translateY(-14px) rotate(0deg); }
+      50%  { transform: translateY(-6px) rotate(1.5deg); }
+      75%  { transform: translateY(-18px) rotate(0deg); }
+      100% { transform: translateY(0px) rotate(-1.5deg); }
+    }
+
+    .ship-container img {
+      width: 160px;
+      height: 160px;
+      filter: drop-shadow(0 8px 24px rgba(0,0,0,0.4));
+    }
+
+    /* Signal rings off tower */
+    .signal {
+      position: absolute;
+      top: -4px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 3px;
+    }
+    .signal-ring {
+      border: 2px solid #00B4D8;
+      border-radius: 50%;
+      opacity: 0;
+      animation: ping 2.4s ease-out infinite;
+    }
+    .signal-ring:nth-child(1) { width: 18px; height: 18px; animation-delay: 0s; }
+    .signal-ring:nth-child(2) { width: 34px; height: 34px; animation-delay: 0.3s; }
+    .signal-ring:nth-child(3) { width: 52px; height: 52px; animation-delay: 0.6s; }
+
+    @keyframes ping {
+      0%   { transform: scale(0.6); opacity: 0.8; }
+      100% { transform: scale(1.4); opacity: 0; }
+    }
+
+    /* Text */
+    .content {
+      position: relative;
+      z-index: 10;
+      text-align: center;
+      padding: 0 24px;
+    }
+
+    .error-code {
+      font-size: clamp(72px, 16vw, 120px);
+      font-weight: 800;
+      letter-spacing: -4px;
+      line-height: 1;
+      background: linear-gradient(135deg, #00B4D8, #0096C7, #fff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 12px;
+    }
+
+    .headline {
+      font-size: clamp(20px, 4vw, 28px);
+      font-weight: 600;
+      margin-bottom: 10px;
+      color: #fff;
+    }
+
+    .subline {
+      font-size: clamp(14px, 2.5vw, 17px);
+      color: rgba(255,255,255,0.55);
+      max-width: 380px;
+      margin: 0 auto 32px;
+      line-height: 1.6;
+    }
+
+    .cta {
+      display: inline-block;
+      background: #0096C7;
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 15px;
+      padding: 14px 32px;
+      border-radius: 50px;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .cta:hover {
+      background: #0077B6;
+      transform: translateY(-2px);
+    }
+
+    /* Logo wordmark */
+    .wordmark {
+      position: fixed;
+      top: 24px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 20;
+      font-size: 18px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      color: rgba(255,255,255,0.75);
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+
+  <a class="wordmark" href="/">BuildArk</a>
+
+  <!-- Twinkling stars -->
+  <div class="stars" id="stars"></div>
+
+  <!-- Bobbing ship -->
+  <div class="ship-container">
+    <div class="signal">
+      <div class="signal-ring"></div>
+      <div class="signal-ring"></div>
+      <div class="signal-ring"></div>
+    </div>
+    <img src="/favicon.png" alt="BuildArk ship lost at sea" width="160" height="160" />
+  </div>
+
+  <!-- Copy -->
+  <div class="content">
+    <div class="error-code">404</div>
+    <p class="headline">You've drifted off course.</p>
+    <p class="subline">This page is lost at sea. Let's get you back to solid ground.</p>
+    <a class="cta" href="/">Head Back to Shore</a>
+  </div>
+
+  <!-- Ocean waves -->
+  <div class="ocean">
+    <div class="wave wave-1"></div>
+    <div class="wave wave-2"></div>
+    <div class="wave wave-3"></div>
+    <div class="wave wave-4"></div>
+  </div>
+
+  <script>
+    // Generate random stars
+    const container = document.getElementById('stars');
+    for (let i = 0; i < 80; i++) {
+      const s = document.createElement('div');
+      s.className = 'star';
+      s.style.cssText = `top:${Math.random()*70}%;left:${Math.random()*100}%;--d:${2+Math.random()*4}s;animation-delay:${Math.random()*4}s`;
+      container.appendChild(s);
+    }
+  </script>
+</body>
+</html>
