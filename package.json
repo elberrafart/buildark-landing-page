@@ -1,0 +1,27 @@
+{
+  "name": "primary",
+  "version": "1.0.0",
+  "description": "> *We build the tools that carry your business forward.*",
+  "main": "index.js",
+  "scripts": {
+    "build": "esbuild src/analytics.js --bundle --minify --outfile=dist/analytics.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/elberrafart/buildark-landing-page.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/elberrafart/buildark-landing-page/issues"
+  },
+  "homepage": "https://github.com/elberrafart/buildark-landing-page#readme",
+  "dependencies": {
+    "@vercel/analytics": "^2.0.1"
+  },
+  "devDependencies": {
+    "esbuild": "^0.27.4"
+  }
+}

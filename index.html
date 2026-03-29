@@ -817,7 +817,7 @@
     document.getElementById(id).addEventListener('click', closeMenu);
   });
 
-  /* ──────────────────────────────────────────────────────────
+  /* ────────────────────────────────��─────────────────────────
      Canvas wave setup
   ────────────────────────────────────────────────────────── */
   const heroEl     = document.getElementById('hero');
@@ -994,7 +994,7 @@
 
   window.addEventListener('scroll', onScroll, { passive: true });
 
-  /* ──────────────────────────────────────────────────────────
+  /* ──────────────────────────────────────────────────���───────
      Also update on visualViewport resize (iOS keyboard open/close,
      address bar show/hide), which doesn't always fire 'resize'
   ────────────────────────────────────────────────────────── */
@@ -1005,6 +1005,9 @@
     }, { passive: true });
   }
 </script>
+
+<!-- Vercel Web Analytics -->
+<script src="/dist/analytics.js" defer></script>
 
 </body>
 </html>
