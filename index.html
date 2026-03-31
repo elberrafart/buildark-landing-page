@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <meta name="theme-color" content="#EDF3FF" id="themeColor" />
+  <meta name="theme-color" content="#EEF4FC" id="themeColor" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="default" />
   <title>BuildArk — Custom Web Design &amp; App Development for Small Businesses</title>
@@ -65,22 +65,24 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@800&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800&family=Syne:wght@800&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
 
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --bg:       #FFFFFF;
-      --bg-alt:   #F4F7FF;
-      --teal:     #00C9B1;
-      --teal-dk:  #009E8E;
-      --blue:     #3B82F6;
-      --text:     #111827;
-      --muted:    #6B7A99;
-      --border:   rgba(0, 0, 0, 0.08);
-      --shadow:   0 2px 16px rgba(0, 0, 0, 0.07);
-      --shadow-lg:0 8px 32px rgba(0, 0, 0, 0.12);
+      --bg:        #FFFFFF;
+      --bg-alt:    #EEF4FC;
+      --navy:      #0D2B4E;
+      --navy-mid:  #1A4A72;
+      --teal:      #00AFA2;
+      --teal-dk:   #008E84;
+      --light-blue:#B8D8EC;
+      --text:      #0D2B4E;
+      --muted:     #5E7D9A;
+      --border:    rgba(13, 43, 78, 0.10);
+      --shadow:    0 2px 16px rgba(13, 43, 78, 0.08);
+      --shadow-lg: 0 8px 32px rgba(13, 43, 78, 0.14);
       --vh: 1vh;
     }
 
@@ -97,8 +99,8 @@
 
     ::selection { background: var(--teal); color: #fff; }
     ::-webkit-scrollbar { width: 6px; }
-    ::-webkit-scrollbar-track { background: #EDF3FF; }
-    ::-webkit-scrollbar-thumb { background: var(--teal); border-radius: 3px; }
+    ::-webkit-scrollbar-track { background: #EEF4FC; }
+    ::-webkit-scrollbar-thumb { background: var(--navy-mid); border-radius: 3px; }
 
     h1, h2, h3 { font-family: 'Syne', sans-serif; font-weight: 800; letter-spacing: -0.02em; }
     a, button { cursor: pointer; }
@@ -122,20 +124,20 @@
     }
     #navbar.scrolled { background: rgba(255, 255, 255, 0.93); }
     #navbar.flooded  {
-      background: rgba(2, 12, 30, 0.88);
-      border-bottom-color: rgba(0, 201, 177, 0.15);
+      background: rgba(5, 18, 38, 0.90);
+      border-bottom-color: rgba(0, 175, 162, 0.15);
     }
 
     .nav-brand { display: flex; align-items: center; gap: 0.65rem; text-decoration: none; min-height: 44px; }
-    .nav-logo-wrap { width: 36px; height: 36px; border-radius: 50%; overflow: hidden; flex-shrink: 0; }
-    .nav-logo-wrap img { width: 112%; height: 112%; margin: -6%; object-fit: cover; display: block; }
+    .nav-logo-wrap { width: 40px; height: 40px; flex-shrink: 0; }
+    .nav-logo-wrap img { width: 100%; height: 100%; object-fit: contain; display: block; }
 
     .nav-wordmark {
-      font-family: 'Syne', sans-serif; font-weight: 800;
-      font-size: 1rem; letter-spacing: 0.18em;
-      color: var(--text); transition: color 0.6s;
+      font-family: 'Barlow Condensed', sans-serif; font-weight: 800;
+      font-size: 1.25rem; letter-spacing: 0.06em; text-transform: uppercase;
+      color: var(--navy); transition: color 0.6s;
     }
-    #navbar.flooded .nav-wordmark { color: #F0F4FF; }
+    #navbar.flooded .nav-wordmark { color: #EEF4FC; }
 
     .nav-links { display: flex; align-items: center; gap: 2.5rem; list-style: none; }
     .nav-links a {
@@ -144,19 +146,25 @@
       color: var(--muted); min-height: 44px; display: flex; align-items: center;
       transition: color 0.2s;
     }
-    .nav-links a:hover { color: var(--text); }
-    #navbar.flooded .nav-links a       { color: rgba(240, 244, 255, 0.65); }
-    #navbar.flooded .nav-links a:hover { color: #F0F4FF; }
+    .nav-links a:hover { color: var(--navy); }
+    #navbar.flooded .nav-links a       { color: rgba(238, 244, 252, 0.65); }
+    #navbar.flooded .nav-links a:hover { color: #EEF4FC; }
 
     .nav-cta {
       padding: 0.45rem 1.2rem !important; border-radius: 50px !important;
-      background: transparent !important; color: var(--teal) !important;
-      border: 1.5px solid var(--teal) !important;
+      background: transparent !important; color: var(--navy) !important;
+      border: 1.5px solid var(--navy) !important;
       transition: background 0.2s, color 0.2s, box-shadow 0.2s !important;
     }
     .nav-cta:hover {
+      background: var(--navy) !important; color: #fff !important;
+      box-shadow: 0 0 20px rgba(13, 43, 78, 0.25) !important;
+    }
+    #navbar.flooded .nav-cta {
+      color: var(--teal) !important; border-color: var(--teal) !important;
+    }
+    #navbar.flooded .nav-cta:hover {
       background: var(--teal) !important; color: #fff !important;
-      box-shadow: 0 0 20px rgba(0, 201, 177, 0.3) !important;
     }
 
     .nav-hamburger {
@@ -165,18 +173,18 @@
       min-width: 44px; min-height: 44px; align-items: center; justify-content: center;
     }
     .nav-hamburger span {
-      display: block; width: 24px; height: 2px; background: var(--text);
+      display: block; width: 24px; height: 2px; background: var(--navy);
       border-radius: 2px; transition: background 0.6s, transform 0.3s, opacity 0.3s;
       transform-origin: center;
     }
-    #navbar.flooded .nav-hamburger span { background: #F0F4FF; }
+    #navbar.flooded .nav-hamburger span { background: #EEF4FC; }
     .nav-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
     .nav-hamburger.open span:nth-child(2) { opacity: 0; }
     .nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
     #mobileMenu {
       display: none; position: fixed; inset: 0; z-index: 850;
-      background: rgba(8, 16, 34, 0.97);
+      background: rgba(5, 18, 38, 0.97);
       backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
       flex-direction: column; align-items: center; justify-content: center;
       gap: 2.75rem;
@@ -184,8 +192,8 @@
       padding-bottom: env(safe-area-inset-bottom);
     }
     #mobileMenu a {
-      font-family: 'Syne', sans-serif; font-weight: 800; color: #F0F4FF;
-      font-size: 1.6rem; text-decoration: none; letter-spacing: 0.04em;
+      font-family: 'Barlow Condensed', sans-serif; font-weight: 800; color: #EEF4FC;
+      font-size: 2rem; text-decoration: none; letter-spacing: 0.08em; text-transform: uppercase;
       min-height: 44px; display: flex; align-items: center; transition: color 0.2s;
     }
     #mobileMenu a:hover     { color: var(--teal); }
@@ -198,10 +206,10 @@
       position: sticky; top: 0;
       height: calc(var(--vh, 1vh) * 100); min-height: 500px;
       overflow: hidden;
-      background: #EDF3FF;
+      background: #EEF4FC;
       transition: background 1s cubic-bezier(0.4, 0, 0.2, 1);
     }
-    .hero-stage.flooded { background: #020C1E; }
+    .hero-stage.flooded { background: #051226; }
 
     /* Canvas covers full stage; ark is drawn on canvas */
     .wave-layer { position: absolute; inset: 0; z-index: 4; pointer-events: none; }
@@ -220,39 +228,44 @@
 
     .hero-h1 {
       font-size: clamp(2.8rem, 7vw, 4.8rem);
-      color: var(--text); line-height: 1.08; margin-bottom: 1.25rem;
+      color: var(--navy); line-height: 1.08; margin-bottom: 1.25rem;
       animation: fadeInUp 0.8s ease both;
       transition: color 0.9s;
     }
-    .hero-stage.flooded .hero-h1 { color: #F0F4FF; }
+    .hero-stage.flooded .hero-h1 { color: #EEF4FC; }
 
     .hero-tagline {
       font-family: 'DM Sans', sans-serif;
       font-size: clamp(1rem, 2.2vw, 1.25rem); font-weight: 500;
-      /* Dark teal on light bg — good contrast. Halo shadow reinforces separation. */
-      color: #00796B;
-      text-shadow: 0 0 18px rgba(255,255,255,0.85), 0 0 36px rgba(255,255,255,0.5);
+      color: var(--navy-mid);
+      text-shadow: 0 0 18px rgba(255,255,255,0.9), 0 0 36px rgba(255,255,255,0.6);
       margin-bottom: 2.25rem;
       animation: fadeInUp 0.8s 0.3s ease both;
       transition: color 0.9s, text-shadow 0.9s;
     }
-    /* Bright teal + dark halo when background is dark */
     .hero-stage.flooded .hero-tagline {
-      color: #00C9B1;
-      text-shadow: 0 0 18px rgba(2,12,30,0.9), 0 0 36px rgba(2,12,30,0.6);
+      color: var(--light-blue);
+      text-shadow: 0 0 18px rgba(5,18,38,0.9), 0 0 36px rgba(5,18,38,0.6);
     }
 
     .hero-cta {
       display: inline-flex; align-items: center; gap: 0.5rem;
-      padding: 0.9rem 2.25rem; background: var(--teal); color: #fff;
+      padding: 0.9rem 2.25rem; background: var(--navy); color: #fff;
       font-family: 'DM Sans', sans-serif; font-weight: 500; font-size: 1rem;
       text-decoration: none; border-radius: 50px;
       animation: fadeInUp 0.8s 0.6s ease both;
       transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
     }
     .hero-cta:hover {
-      background: var(--teal-dk); transform: translateY(-2px);
-      box-shadow: 0 8px 28px rgba(0, 201, 177, 0.4);
+      background: var(--navy-mid); transform: translateY(-2px);
+      box-shadow: 0 8px 28px rgba(13, 43, 78, 0.35);
+    }
+    .hero-stage.flooded .hero-cta {
+      background: var(--teal);
+    }
+    .hero-stage.flooded .hero-cta:hover {
+      background: var(--teal-dk);
+      box-shadow: 0 8px 28px rgba(0, 175, 162, 0.4);
     }
 
     .scroll-indicator {
@@ -268,7 +281,7 @@
       transition: opacity 0.4s, color 0.8s;
     }
     .scroll-indicator.gone { opacity: 0; }
-    .hero-stage.flooded .scroll-indicator { color: rgba(240, 244, 255, 0.4); }
+    .hero-stage.flooded .scroll-indicator { color: rgba(184, 216, 236, 0.5); }
     .scroll-indicator svg { animation: bounceDown 2s ease-in-out infinite; }
 
     @keyframes bounceDown {
@@ -291,7 +304,7 @@
     .section-heading { font-size: clamp(1.8rem, 4vw, 2.8rem); color: var(--text); text-align: center; margin-bottom: 0.75rem; }
     .section-sub     { font-family: 'DM Sans', sans-serif; text-align: center; color: var(--muted); font-size: 1rem; margin-bottom: 3.5rem; }
 
-    .section-divider { height: 1px; background: linear-gradient(90deg, transparent, rgba(0,201,177,0.35), transparent); }
+    .section-divider { height: 1px; background: linear-gradient(90deg, transparent, rgba(13,43,78,0.2), transparent); }
 
     /* ── SERVICES ── */
     #services { background: var(--bg); }
@@ -305,19 +318,19 @@
       box-shadow: var(--shadow);
       transition: border-color 0.3s, box-shadow 0.3s, transform 0.3s;
     }
-    /* teal top accent */
+    /* navy top accent */
     .card::after {
       content: ''; position: absolute; top: 0; left: 2.5rem;
-      width: 40px; height: 4px; background: var(--teal); border-radius: 0 0 2px 2px;
+      width: 40px; height: 4px; background: var(--navy); border-radius: 0 0 2px 2px;
     }
     /* shimmer */
     .card::before {
       content: ''; position: absolute; inset: 0;
-      background: linear-gradient(90deg, transparent, rgba(0,201,177,0.05), transparent);
+      background: linear-gradient(90deg, transparent, rgba(13,43,78,0.04), transparent);
       transform: translateX(-100%); border-radius: inherit; z-index: 0;
     }
     @media (hover: hover) {
-      .card:hover { border-color: rgba(0,201,177,0.35); box-shadow: var(--shadow-lg); transform: translateY(-4px); }
+      .card:hover { border-color: rgba(13,43,78,0.22); box-shadow: var(--shadow-lg); transform: translateY(-4px); }
       .card:hover::before { animation: shimmer 0.65s ease forwards; }
     }
     @keyframes shimmer { from { transform: translateX(-100%); } to { transform: translateX(200%); } }
@@ -338,9 +351,9 @@
       transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
     }
     @media (hover: hover) {
-      .why-block:hover { border-color: rgba(0,201,177,0.3); transform: translateY(-3px); box-shadow: var(--shadow-lg); }
+      .why-block:hover { border-color: rgba(13,43,78,0.22); transform: translateY(-3px); box-shadow: var(--shadow-lg); }
     }
-    .why-number { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 2.4rem; color: var(--teal); line-height: 1; margin-bottom: 1rem; }
+    .why-number { font-family: 'Barlow Condensed', sans-serif; font-weight: 800; font-size: 2.4rem; color: var(--navy); line-height: 1; margin-bottom: 1rem; }
     .why-label  { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 1.2rem; color: var(--text); margin-bottom: 0.6rem; display: block; }
     .why-desc   { font-family: 'DM Sans', sans-serif; font-size: 0.95rem; color: var(--muted); line-height: 1.65; }
 
@@ -353,25 +366,25 @@
       border-radius: 12px; overflow: hidden; box-shadow: var(--shadow);
       transition: border-color 0.3s;
     }
-    .faq-item.open { border-color: rgba(0, 201, 177, 0.35); }
+    .faq-item.open { border-color: rgba(13, 43, 78, 0.28); }
 
     .faq-question {
       width: 100%; display: flex; align-items: center; justify-content: space-between;
       padding: 1.25rem 1.5rem; background: none; border: none;
-      color: var(--text); font-family: 'Syne', sans-serif; font-weight: 800;
+      color: var(--navy); font-family: 'Syne', sans-serif; font-weight: 800;
       font-size: 1rem; text-align: left; gap: 1rem; transition: color 0.2s;
     }
-    .faq-question:hover { color: var(--teal); }
+    .faq-question:hover { color: var(--navy-mid); }
 
     .faq-icon {
       flex-shrink: 0; width: 26px; height: 26px; border-radius: 50%;
-      border: 1.5px solid rgba(0,201,177,0.5);
+      border: 1.5px solid rgba(13,43,78,0.35);
       display: flex; align-items: center; justify-content: center;
-      color: var(--teal); font-size: 1.2rem; line-height: 1; font-style: normal;
+      color: var(--navy); font-size: 1.2rem; line-height: 1; font-style: normal;
       font-family: 'DM Sans', sans-serif; font-weight: 400;
       transition: transform 0.35s cubic-bezier(0.34,1.56,0.64,1), background 0.2s, color 0.2s, border-color 0.2s;
     }
-    .faq-item.open .faq-icon { transform: rotate(45deg); background: var(--teal); color: #fff; border-color: var(--teal); }
+    .faq-item.open .faq-icon { transform: rotate(45deg); background: var(--navy); color: #fff; border-color: var(--navy); }
 
     .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; }
     .faq-item.open .faq-answer { max-height: 500px; }
@@ -388,13 +401,13 @@
     .contact-link {
       display: inline-flex; align-items: center; gap: 0.6rem;
       padding: 0.6rem 1.25rem;
-      background: rgba(0,201,177,0.08); border: 1px solid rgba(0,201,177,0.2);
-      border-radius: 50px; color: var(--text); text-decoration: none;
+      background: rgba(13,43,78,0.06); border: 1px solid rgba(13,43,78,0.18);
+      border-radius: 50px; color: var(--navy); text-decoration: none;
       font-family: 'DM Sans', sans-serif; font-size: 0.9rem; font-weight: 500;
       width: fit-content;
       transition: background 0.2s, color 0.2s, border-color 0.2s, box-shadow 0.2s;
     }
-    .contact-link:hover { background: var(--teal); color: #fff; border-color: var(--teal); box-shadow: 0 4px 16px rgba(0,201,177,0.25); }
+    .contact-link:hover { background: var(--navy); color: #fff; border-color: var(--navy); box-shadow: 0 4px 16px rgba(13,43,78,0.2); }
 
     .contact-form { display: flex; flex-direction: column; gap: 1rem; }
     .form-row     { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
@@ -415,21 +428,21 @@
     .form-field input::placeholder,
     .form-field textarea::placeholder { color: rgba(17,24,39,0.25); }
     .form-field input:focus,
-    .form-field textarea:focus { border-color: var(--teal); box-shadow: 0 0 0 3px rgba(0,201,177,0.15); }
+    .form-field textarea:focus { border-color: var(--navy); box-shadow: 0 0 0 3px rgba(13,43,78,0.12); }
     .form-field textarea { resize: vertical; min-height: 130px; }
 
     .form-submit {
       margin-top: 0.25rem; padding: 1rem; width: 100%;
-      background: var(--teal); color: #fff;
-      font-family: 'Syne', sans-serif; font-weight: 800; font-size: 0.9rem;
+      background: var(--navy); color: #fff;
+      font-family: 'Barlow Condensed', sans-serif; font-weight: 800; font-size: 1rem;
       letter-spacing: 0.1em; text-transform: uppercase; border: none; border-radius: 10px;
       transition: background 0.2s, box-shadow 0.2s, transform 0.2s;
     }
-    .form-submit:hover:not(:disabled) { background: var(--teal-dk); box-shadow: 0 4px 24px rgba(0,201,177,0.3); transform: translateY(-1px); }
+    .form-submit:hover:not(:disabled) { background: var(--navy-mid); box-shadow: 0 4px 24px rgba(13,43,78,0.25); transform: translateY(-1px); }
     .form-submit:disabled { opacity: 0.6; cursor: not-allowed; }
 
     .form-status { border-radius: 8px; padding: 0.75rem 1rem; font-family: 'DM Sans', sans-serif; font-size: 0.9rem; display: none; }
-    .form-status.success { display: block; background: rgba(0,201,177,0.1); border: 1px solid rgba(0,201,177,0.35); color: var(--teal-dk); }
+    .form-status.success { display: block; background: rgba(13,43,78,0.07); border: 1px solid rgba(13,43,78,0.25); color: var(--navy); }
     .form-status.error   { display: block; background: rgba(239,68,68,0.08); border: 1px solid rgba(239,68,68,0.3); color: #dc2626; }
 
     /* ── FOOTER ── */
@@ -442,14 +455,14 @@
     }
     .footer-inner { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; }
     .footer-brand { display: flex; align-items: center; gap: 0.6rem; text-decoration: none; }
-    .footer-logo-wrap { width: 28px; height: 28px; border-radius: 50%; overflow: hidden; flex-shrink: 0; }
-    .footer-logo-wrap img { width: 112%; height: 112%; margin: -6%; object-fit: cover; display: block; }
-    .footer-wordmark { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 0.82rem; letter-spacing: 0.18em; color: var(--muted); transition: color 0.2s; }
-    .footer-brand:hover .footer-wordmark { color: var(--text); }
+    .footer-logo-wrap { width: 32px; height: 32px; flex-shrink: 0; }
+    .footer-logo-wrap img { width: 100%; height: 100%; object-fit: contain; display: block; }
+    .footer-wordmark { font-family: 'Barlow Condensed', sans-serif; font-weight: 800; font-size: 1rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); transition: color 0.2s; }
+    .footer-brand:hover .footer-wordmark { color: var(--navy); }
     .footer-copy  { font-family: 'DM Sans', sans-serif; font-size: 0.8rem; color: var(--muted); }
     .footer-links { display: flex; align-items: center; gap: 1rem; }
     .footer-link  { display: inline-flex; align-items: center; gap: 0.4rem; color: var(--muted); text-decoration: none; font-family: 'DM Sans', sans-serif; font-size: 0.8rem; transition: color 0.2s; }
-    .footer-link:hover { color: var(--teal); }
+    .footer-link:hover { color: var(--navy); }
 
     /* ── SCROLL ANIMATIONS ── */
     .animate-on-scroll { opacity: 0; transform: translateY(30px); transition: opacity 0.6s ease, transform 0.6s ease; }
@@ -792,33 +805,40 @@
    *   origin = waterline center of hull
    *   +y = downward (into water), -y = upward (into air)
    */
+  /*
+   * Ark redrawn to match the new logo:
+   *   - Bottom hull: dark navy curved band (wide, shallow)
+   *   - Middle deck: medium navy curved deck strip
+   *   - Upper cabin: light blue chevron/arch (the peaked roof layer)
+   *   - WiFi signal: two light-blue arcs + teal dot at apex
+   *
+   * Origin = waterline center. Positive Y = down (into water).
+   */
   function drawArkHull(cx, cy, angle, s) {
     ctx.save();
     ctx.translate(cx, cy);
     ctx.rotate(angle);
     ctx.scale(s, s);
 
-    /* Hull body */
+    /* Bottom hull shadow — darkest, widest, slightly below waterline */
     ctx.beginPath();
-    ctx.moveTo(-100, 0);
-    ctx.bezierCurveTo(-100, 0, -88, 26, -58, 28);
-    ctx.lineTo(58, 28);
-    ctx.bezierCurveTo(88, 26, 100, 0, 100, 0);
+    ctx.moveTo(-108, 4);
+    ctx.bezierCurveTo(-108, 4, -90, 30, -52, 32);
+    ctx.lineTo(52, 32);
+    ctx.bezierCurveTo(90, 30, 108, 4, 108, 4);
     ctx.closePath();
-    ctx.fillStyle = 'rgba(6, 16, 44, 0.93)';
+    ctx.fillStyle = 'rgba(8, 20, 42, 0.92)';
     ctx.fill();
-    ctx.strokeStyle = 'rgba(0, 201, 177, 0.5)';
-    ctx.lineWidth = 1.5;
-    ctx.stroke();
 
-    /* Portholes */
-    [-62, -22, 18, 58].forEach(px => {
-      ctx.beginPath();
-      ctx.arc(px, 12, 6, 0, Math.PI * 2);
-      ctx.strokeStyle = 'rgba(0, 201, 177, 0.3)';
-      ctx.lineWidth = 1;
-      ctx.stroke();
-    });
+    /* Main hull band — dark navy, the primary hull layer */
+    ctx.beginPath();
+    ctx.moveTo(-96, 0);
+    ctx.bezierCurveTo(-96, 0, -80, 20, -48, 22);
+    ctx.lineTo(48, 22);
+    ctx.bezierCurveTo(80, 20, 96, 0, 96, 0);
+    ctx.closePath();
+    ctx.fillStyle = 'rgba(13, 43, 78, 0.95)';
+    ctx.fill();
 
     ctx.restore();
   }
@@ -829,67 +849,44 @@
     ctx.rotate(angle);
     ctx.scale(s, s);
 
-    /* Main cabin */
-    rRect(-68, -36, 136, 36, 3);
-    ctx.fillStyle = 'rgba(5, 13, 36, 0.96)';
-    ctx.fill();
-    ctx.strokeStyle = 'rgba(0, 201, 177, 0.4)';
-    ctx.lineWidth = 1;
-    ctx.stroke();
-
-    /* Cabin windows */
-    [-50, -18, 14, 46].forEach(wx => {
-      rRect(wx, -30, 24, 15, 2);
-      ctx.fillStyle = 'rgba(0, 201, 177, 0.1)';
-      ctx.fill();
-      ctx.strokeStyle = 'rgba(0, 201, 177, 0.32)';
-      ctx.lineWidth = 0.75;
-      ctx.stroke();
-    });
-
-    /* Upper cabin */
-    rRect(-40, -58, 80, 22, 2);
-    ctx.fillStyle = 'rgba(5, 13, 36, 0.96)';
-    ctx.fill();
-    ctx.strokeStyle = 'rgba(0, 201, 177, 0.3)';
-    ctx.lineWidth = 1;
-    ctx.stroke();
-
-    /* Upper windows */
-    [-30, 6].forEach(wx => {
-      rRect(wx, -54, 20, 13, 1.5);
-      ctx.fillStyle = 'rgba(0, 201, 177, 0.12)';
-      ctx.fill();
-      ctx.strokeStyle = 'rgba(0, 201, 177, 0.25)';
-      ctx.lineWidth = 0.75;
-      ctx.stroke();
-    });
-
-    /* Roof peak */
+    /* Middle deck strip — medium navy, sits just above waterline */
     ctx.beginPath();
-    ctx.moveTo(-52, -58);
-    ctx.lineTo(0,   -80);
-    ctx.lineTo(52,  -58);
-    ctx.strokeStyle = 'rgba(0, 201, 177, 0.5)';
-    ctx.lineWidth = 1.5;
-    ctx.lineJoin = 'round';
-    ctx.stroke();
-
-    /* Mast */
-    ctx.beginPath();
-    ctx.moveTo(0, -80);
-    ctx.lineTo(0, -106);
-    ctx.strokeStyle = 'rgba(0, 201, 177, 0.55)';
-    ctx.lineWidth = 1.5;
-    ctx.stroke();
-
-    /* Pennant */
-    ctx.beginPath();
-    ctx.moveTo(0,  -106);
-    ctx.lineTo(17, -98);
-    ctx.lineTo(0,  -90);
+    ctx.moveTo(-76, 0);
+    ctx.bezierCurveTo(-76, 0, -62, -18, -36, -20);
+    ctx.lineTo(36, -20);
+    ctx.bezierCurveTo(62, -18, 76, 0, 76, 0);
     ctx.closePath();
-    ctx.fillStyle = 'rgba(0, 201, 177, 0.4)';
+    ctx.fillStyle = 'rgba(22, 65, 105, 0.92)';
+    ctx.fill();
+
+    /* Upper cabin chevron — light blue, the peaked roof/bridge layer */
+    ctx.beginPath();
+    ctx.moveTo(-52, -20);
+    ctx.bezierCurveTo(-52, -20, -40, -48, 0, -58);
+    ctx.bezierCurveTo(40, -48, 52, -20, 52, -20);
+    ctx.closePath();
+    ctx.fillStyle = 'rgba(184, 216, 236, 0.88)';
+    ctx.fill();
+
+    /* WiFi arcs — centered at cabin peak */
+    const wfX = 0, wfY = -62;
+    ctx.lineWidth = 2;
+    ctx.strokeStyle = 'rgba(184, 216, 236, 0.75)';
+    ctx.lineCap = 'round';
+
+    /* Outer arc */
+    ctx.beginPath();
+    ctx.arc(wfX, wfY, 18, -Math.PI * 0.85, -Math.PI * 0.15);
+    ctx.stroke();
+    /* Inner arc */
+    ctx.beginPath();
+    ctx.arc(wfX, wfY, 10, -Math.PI * 0.82, -Math.PI * 0.18);
+    ctx.stroke();
+
+    /* Teal center dot */
+    ctx.beginPath();
+    ctx.arc(wfX, wfY, 4, 0, Math.PI * 2);
+    ctx.fillStyle = '#00AFA2';
     ctx.fill();
 
     ctx.restore();
@@ -936,10 +933,10 @@
     const arkAlpha = ease < 0.35 ? 1 : Math.max(0, 1 - (ease - 0.35) / 0.30);
 
     /* 1. Back wave */
-    drawWave('rgba(0,  80, 160, 0.50)', bgBase,  30, 1.4, Math.PI * 0.45);
+    drawWave('rgba(13, 43, 78, 0.45)', bgBase,  30, 1.4, Math.PI * 0.45);
 
     /* 2. Mid wave */
-    drawWave('rgba(0, 160, 180, 0.58)', midBase, 22, 1.8, Math.PI * 0.20);
+    drawWave('rgba(26, 74, 114, 0.52)', midBase, 22, 1.8, Math.PI * 0.20);
 
     /* 3. Ark hull (below waterline — front wave will cover it) */
     if (arkAlpha > 0.01) {
@@ -949,7 +946,7 @@
     }
 
     /* 4. Front wave (washes over the hull) */
-    drawWave('rgba(0, 201, 177, 0.72)', fgBase, fgAmp, fgFreq, 0);
+    drawWave('rgba(0, 175, 162, 0.70)', fgBase, fgAmp, fgFreq, 0);
 
     /* 5. Ark superstructure (above waterline — sits on top of front wave) */
     if (arkAlpha > 0.01) {
@@ -974,7 +971,7 @@
     heroStage.classList.toggle('flooded', flooded);
     navbar.classList.toggle('flooded', flooded);
     navbar.classList.toggle('scrolled', window.scrollY > 20 && !flooded);
-    themeColor.content = flooded ? '#020C1E' : '#EDF3FF';
+    themeColor.content = flooded ? '#051226' : '#EEF4FC';
 
     scrollHint.classList.toggle('gone', scrollProg > 0.04);
   }
