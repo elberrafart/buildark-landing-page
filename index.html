@@ -3,12 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <meta name="theme-color" content="#ffffff" id="themeColor" />
+  <meta name="theme-color" content="#EDF3FF" id="themeColor" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="default" />
   <title>BuildArk — Custom Web Design &amp; App Development for Small Businesses</title>
 
-  <!-- SEO Meta -->
   <meta name="description" content="BuildArk builds custom websites, landing pages, and apps for small businesses, startups, and growing companies. Get a polished digital presence and modern tools that fit the way you work." />
   <meta name="keywords" content="custom web design small business, landing page design, app development, web presence, small business website, BuildArk" />
   <meta name="robots" content="index, follow" />
@@ -16,7 +15,6 @@
   <link rel="canonical" href="https://buildark.dev/" />
   <link rel="icon" type="image/png" href="/favicon.png" />
 
-  <!-- Open Graph -->
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="BuildArk" />
   <meta property="og:title" content="BuildArk — Custom Web Design &amp; App Development for Small Businesses" />
@@ -26,14 +24,12 @@
   <meta property="og:image:alt" content="BuildArk logo — custom web design and app development" />
   <meta property="og:locale" content="en_US" />
 
-  <!-- Twitter/X Card -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="BuildArk — Custom Web Design &amp; App Development for Small Businesses" />
   <meta name="twitter:description" content="BuildArk builds custom websites, landing pages, and apps for small businesses. Modern tools. Hands-on service. Built to scale." />
   <meta name="twitter:image" content="https://buildark.dev/buildarklogo.jpg" />
   <meta name="twitter:site" content="@buildarksolutions" />
 
-  <!-- JSON-LD: ProfessionalService -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -43,34 +39,16 @@
     "url": "https://buildark.dev/",
     "logo": "https://buildark.dev/buildarklogo.jpg",
     "image": "https://buildark.dev/buildarklogo.jpg",
-    "description": "BuildArk is a personalized technology partner for small businesses, startups, and growing companies. We build custom websites, landing pages, and applications that modernize how businesses operate and help them stand out online.",
+    "description": "BuildArk is a personalized technology partner for small businesses, startups, and growing companies.",
     "email": "hello@buildark.io",
     "sameAs": ["https://www.instagram.com/buildarksolutions/"],
     "areaServed": "US",
-    "serviceType": ["Web Design", "Landing Page Design", "Custom App Development", "Web Presence"],
-    "hasOfferCatalog": {
-      "@type": "OfferCatalog",
-      "name": "BuildArk Services",
-      "itemListElement": [
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Custom App Development", "description": "Tailored applications built to fit your exact workflow." } },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Web Presence — Landing Pages & Websites", "description": "Landing pages and full websites that look credible, load fast, and convert visitors." } },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Own Products", "description": "Consumer apps published on the App Store." } }
-      ]
-    }
+    "serviceType": ["Web Design", "Landing Page Design", "Custom App Development", "Web Presence"]
   }
   </script>
-
-  <!-- JSON-LD: WebSite -->
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "name": "BuildArk",
-    "url": "https://buildark.dev/"
-  }
+  {"@context":"https://schema.org","@type":"WebSite","name":"BuildArk","url":"https://buildark.dev/"}
   </script>
-
-  <!-- JSON-LD: FAQPage -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -85,43 +63,47 @@
   }
   </script>
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@800&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+
   <style>
-    /* ── Reset ──────────────────────────────────────────────── */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --purple-deep  : #26215C;
-      --purple       : #534AB7;
-      --amber        : #EF9F27;
-      --white        : #ffffff;
-
-      /* Aqua-blue underwater palette */
-      --aqua-bright  : #00B4D8;
-      --aqua         : #0096C7;
-      --aqua-dark    : #0077B6;
-      --navy         : #023E8A;
-      --navy-deep    : #03045E;
-
-      /* Dynamic viewport height — set by JS for iOS Safari */
+      --bg:       #FFFFFF;
+      --bg-alt:   #F4F7FF;
+      --teal:     #00C9B1;
+      --teal-dk:  #009E8E;
+      --blue:     #3B82F6;
+      --text:     #111827;
+      --muted:    #6B7A99;
+      --border:   rgba(0, 0, 0, 0.08);
+      --shadow:   0 2px 16px rgba(0, 0, 0, 0.07);
+      --shadow-lg:0 8px 32px rgba(0, 0, 0, 0.12);
       --vh: 1vh;
     }
 
-    html {
-      scroll-behavior: smooth;
-      -webkit-text-size-adjust: 100%;
-    }
+    html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
 
     body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
-                   'Helvetica Neue', Arial, sans-serif;
-      background: var(--white);
-      color: #1a1a2e;
+      font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: var(--bg);
+      color: var(--text);
       overflow-x: hidden;
       -webkit-tap-highlight-color: transparent;
       overscroll-behavior-y: none;
     }
 
-    /* ── NAV ────────────────────────────────────────────────── */
+    ::selection { background: var(--teal); color: #fff; }
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: #EDF3FF; }
+    ::-webkit-scrollbar-thumb { background: var(--teal); border-radius: 3px; }
+
+    h1, h2, h3 { font-family: 'Syne', sans-serif; font-weight: 800; letter-spacing: -0.02em; }
+    a, button { cursor: pointer; }
+
+    /* ── NAV ── */
     #navbar {
       position: fixed;
       inset: 0 0 auto 0;
@@ -129,562 +111,377 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      /* Safe area padding for notched phones */
-      padding: 0.85rem 2.5rem;
-      padding-left: max(2.5rem, env(safe-area-inset-left));
+      padding: 0.9rem 2.5rem;
+      padding-left:  max(2.5rem, env(safe-area-inset-left));
       padding-right: max(2.5rem, env(safe-area-inset-right));
-      background: rgba(255,255,255,0.88);
-      backdrop-filter: blur(14px);
-      -webkit-backdrop-filter: blur(14px);
-      border-bottom: 1px solid rgba(0,0,0,0.07);
+      background: rgba(255, 255, 255, 0.82);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.07);
       transition: background 0.6s ease, border-color 0.6s ease;
     }
-
-    #navbar.dark {
-      background: rgba(2, 62, 138, 0.9);
-      border-bottom-color: rgba(255,255,255,0.1);
+    #navbar.scrolled { background: rgba(255, 255, 255, 0.93); }
+    #navbar.flooded  {
+      background: rgba(2, 12, 30, 0.88);
+      border-bottom-color: rgba(0, 201, 177, 0.15);
     }
 
-    .nav-brand {
-      display: flex;
-      align-items: center;
-      gap: 0.65rem;
-      text-decoration: none;
-      min-height: 44px; /* iOS tap target */
-    }
-
-    /* Nav logo: circular crop, no whitespace */
-    .nav-logo-wrap {
-      width: 36px;
-      height: 36px;
-      border-radius: 50%;
-      overflow: hidden;
-      flex-shrink: 0;
-    }
-
-    .nav-logo-wrap img {
-      width: 112%;
-      height: 112%;
-      margin: -6%;
-      object-fit: cover;
-      display: block;
-    }
+    .nav-brand { display: flex; align-items: center; gap: 0.65rem; text-decoration: none; min-height: 44px; }
+    .nav-logo-wrap { width: 36px; height: 36px; border-radius: 50%; overflow: hidden; flex-shrink: 0; }
+    .nav-logo-wrap img { width: 112%; height: 112%; margin: -6%; object-fit: cover; display: block; }
 
     .nav-wordmark {
-      font-size: 1rem;
-      font-weight: 800;
-      letter-spacing: 0.18em;
-      color: var(--purple-deep);
-      transition: color 0.6s;
+      font-family: 'Syne', sans-serif; font-weight: 800;
+      font-size: 1rem; letter-spacing: 0.18em;
+      color: var(--text); transition: color 0.6s;
     }
+    #navbar.flooded .nav-wordmark { color: #F0F4FF; }
 
-    #navbar.dark .nav-wordmark { color: var(--white); }
-
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 2.5rem;
-      list-style: none;
-    }
-
+    .nav-links { display: flex; align-items: center; gap: 2.5rem; list-style: none; }
     .nav-links a {
-      font-size: 0.88rem;
-      font-weight: 500;
-      letter-spacing: 0.04em;
-      text-decoration: none;
-      color: var(--purple-deep);
-      min-height: 44px;
-      display: flex;
-      align-items: center;
-      transition: color 0.3s;
+      font-family: 'DM Sans', sans-serif; font-size: 0.8rem; font-weight: 500;
+      letter-spacing: 0.08em; text-transform: uppercase; text-decoration: none;
+      color: var(--muted); min-height: 44px; display: flex; align-items: center;
+      transition: color 0.2s;
     }
-
-    #navbar.dark .nav-links a { color: rgba(255,255,255,0.85); }
-    .nav-links a:hover       { color: var(--aqua-dark); }
-    #navbar.dark .nav-links a:hover { color: var(--white); }
+    .nav-links a:hover { color: var(--text); }
+    #navbar.flooded .nav-links a       { color: rgba(240, 244, 255, 0.65); }
+    #navbar.flooded .nav-links a:hover { color: #F0F4FF; }
 
     .nav-cta {
-      padding: 0.5rem 1.3rem !important;
-      border-radius: 7px;
-      background: var(--aqua-dark) !important;
-      color: var(--white) !important;
-      font-weight: 600 !important;
-      min-height: 40px !important;
-      transition: background 0.3s, transform 0.2s !important;
+      padding: 0.45rem 1.2rem !important; border-radius: 50px !important;
+      background: transparent !important; color: var(--teal) !important;
+      border: 1.5px solid var(--teal) !important;
+      transition: background 0.2s, color 0.2s, box-shadow 0.2s !important;
+    }
+    .nav-cta:hover {
+      background: var(--teal) !important; color: #fff !important;
+      box-shadow: 0 0 20px rgba(0, 201, 177, 0.3) !important;
     }
 
-    .nav-cta:hover { background: var(--navy) !important; transform: translateY(-1px); }
-
-    /* Instagram link in footer */
-    .footer-ig {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      color: rgba(255,255,255,0.45);
-      text-decoration: none;
-      font-size: 0.8rem;
-      letter-spacing: 0.05em;
-      margin-top: 0.6rem;
-      transition: color 0.25s;
-    }
-    .footer-ig:hover { color: rgba(255,255,255,0.85); }
-    .footer-ig svg   { flex-shrink: 0; }
-
-    #navbar.dark .nav-cta {
-      background: var(--white) !important;
-      color: var(--aqua-dark) !important;
-    }
-
-    /* Hamburger */
     .nav-hamburger {
-      display: none;
-      flex-direction: column;
-      gap: 5px;
-      cursor: pointer;
-      background: none;
-      border: none;
-      padding: 10px;
-      margin: -10px;
-      min-width: 44px;
-      min-height: 44px;
-      align-items: center;
-      justify-content: center;
+      display: none; flex-direction: column; gap: 5px;
+      background: none; border: none; padding: 10px; margin: -10px;
+      min-width: 44px; min-height: 44px; align-items: center; justify-content: center;
     }
-
     .nav-hamburger span {
-      display: block;
-      width: 24px;
-      height: 2px;
-      background: var(--purple-deep);
-      border-radius: 2px;
-      transition: background 0.5s, transform 0.3s, opacity 0.3s;
+      display: block; width: 24px; height: 2px; background: var(--text);
+      border-radius: 2px; transition: background 0.6s, transform 0.3s, opacity 0.3s;
       transform-origin: center;
     }
-
-    #navbar.dark .nav-hamburger span { background: white; }
-
+    #navbar.flooded .nav-hamburger span { background: #F0F4FF; }
     .nav-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
     .nav-hamburger.open span:nth-child(2) { opacity: 0; }
     .nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
-    /* Mobile drawer */
     #mobileMenu {
-      display: none;
-      position: fixed;
-      inset: 0;
-      z-index: 850;
-      background: rgba(0, 119, 182, 0.97);
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
+      display: none; position: fixed; inset: 0; z-index: 850;
+      background: rgba(8, 16, 34, 0.97);
+      backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+      flex-direction: column; align-items: center; justify-content: center;
       gap: 2.75rem;
+      padding-top:    env(safe-area-inset-top);
       padding-bottom: env(safe-area-inset-bottom);
     }
-
     #mobileMenu a {
-      color: white;
-      font-size: 1.6rem;
-      font-weight: 700;
-      text-decoration: none;
-      letter-spacing: 0.08em;
-      min-height: 44px;
-      display: flex;
-      align-items: center;
+      font-family: 'Syne', sans-serif; font-weight: 800; color: #F0F4FF;
+      font-size: 1.6rem; text-decoration: none; letter-spacing: 0.04em;
+      min-height: 44px; display: flex; align-items: center; transition: color 0.2s;
     }
+    #mobileMenu a:hover     { color: var(--teal); }
+    #mobileMenu a.cta-mobile{ color: var(--teal); }
 
-    #mobileMenu a.cta-mobile { color: var(--amber); }
-
-    /* ── HERO ───────────────────────────────────────────────── */
-    #hero {
-      position: relative;
-      /* 165vh gives a brisk but satisfying flood — JS sets --vh for iOS */
-      height: calc(var(--vh, 1vh) * 165);
-    }
+    /* ── HERO ── */
+    #hero { height: calc(var(--vh, 1vh) * 165); }
 
     .hero-stage {
-      position: sticky;
-      top: 0;
-      height: calc(var(--vh, 1vh) * 100);
+      position: sticky; top: 0;
+      height: calc(var(--vh, 1vh) * 100); min-height: 500px;
       overflow: hidden;
-      background: var(--white);
+      background: #EDF3FF;
       transition: background 1s cubic-bezier(0.4, 0, 0.2, 1);
     }
+    .hero-stage.flooded { background: #020C1E; }
 
-    .hero-stage.flooded { background: var(--navy); }
+    /* Canvas covers full stage; ark is drawn on canvas */
+    .wave-layer { position: absolute; inset: 0; z-index: 4; pointer-events: none; }
+    #waveCanvas { position: absolute; bottom: 0; left: 0; width: 100%; height: 100%; }
 
-    /* Logo + tagline — sit above the mountain peak */
-    .hero-center {
+    /* Hero text: centered in upper portion, leaving room for ark at bottom */
+    .hero-content {
       position: absolute;
-      inset: 0;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: flex-start;
+      inset: 0 0 200px 0;        /* reserve bottom 200px for ark + waves */
       z-index: 10;
-      padding: max(5rem, 13vh) 1.5rem 2rem;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
       text-align: center;
-      gap: 1.3rem;
+      padding: max(5rem, 12vh) 1.5rem 0;
     }
 
-    /* Circular clip to remove JPG whitespace */
-    .hero-logo-wrap {
-      width: clamp(180px, 42vw, 280px);
-      height: clamp(180px, 42vw, 280px);
-      border-radius: 50%;
-      overflow: hidden;
-      flex-shrink: 0;
-      filter: drop-shadow(0 6px 32px rgba(0,0,0,0.15));
-      transition: filter 0.8s;
-    }
-
-    .hero-stage.flooded .hero-logo-wrap {
-      filter: drop-shadow(0 6px 40px rgba(0,0,0,0.4));
-    }
-
-    .hero-logo {
-      /* Scale up slightly to clip the white margin inside the JPG */
-      width: 114%;
-      height: 114%;
-      margin: -7%;
-      object-fit: cover;
-      display: block;
-    }
-
-    .hero-tagline {
-      font-size: clamp(0.98rem, 2.4vw, 1.3rem);
-      font-weight: 400;
-      color: var(--purple-deep);
-      letter-spacing: 0.01em;
-      max-width: 460px;
-      line-height: 1.65;
+    .hero-h1 {
+      font-size: clamp(2.8rem, 7vw, 4.8rem);
+      color: var(--text); line-height: 1.08; margin-bottom: 1.25rem;
+      animation: fadeInUp 0.8s ease both;
       transition: color 0.9s;
     }
+    .hero-stage.flooded .hero-h1 { color: #F0F4FF; }
 
-    .hero-stage.flooded .hero-tagline { color: rgba(255,255,255,0.92); }
-
-    /* Scroll hint */
-    .scroll-hint {
-      position: absolute;
-      bottom: max(2rem, env(safe-area-inset-bottom));
-      left: 50%;
-      transform: translateX(-50%);
-      z-index: 10;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 0.45rem;
-      font-size: 0.7rem;
-      font-weight: 500;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: var(--aqua-dark);
-      opacity: 1;
-      transition: opacity 0.5s, color 0.8s;
-      pointer-events: none;
-      white-space: nowrap;
+    .hero-tagline {
+      font-family: 'DM Sans', sans-serif;
+      font-size: clamp(1rem, 2.2vw, 1.25rem); font-weight: 500;
+      /* Dark teal on light bg — good contrast. Halo shadow reinforces separation. */
+      color: #00796B;
+      text-shadow: 0 0 18px rgba(255,255,255,0.85), 0 0 36px rgba(255,255,255,0.5);
+      margin-bottom: 2.25rem;
+      animation: fadeInUp 0.8s 0.3s ease both;
+      transition: color 0.9s, text-shadow 0.9s;
+    }
+    /* Bright teal + dark halo when background is dark */
+    .hero-stage.flooded .hero-tagline {
+      color: #00C9B1;
+      text-shadow: 0 0 18px rgba(2,12,30,0.9), 0 0 36px rgba(2,12,30,0.6);
     }
 
-    .scroll-hint.gone { opacity: 0; }
-    .hero-stage.flooded .scroll-hint { color: rgba(255,255,255,0.6); }
-    .scroll-hint svg { animation: bounce 2s ease-in-out infinite; }
+    .hero-cta {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      padding: 0.9rem 2.25rem; background: var(--teal); color: #fff;
+      font-family: 'DM Sans', sans-serif; font-weight: 500; font-size: 1rem;
+      text-decoration: none; border-radius: 50px;
+      animation: fadeInUp 0.8s 0.6s ease both;
+      transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+    }
+    .hero-cta:hover {
+      background: var(--teal-dk); transform: translateY(-2px);
+      box-shadow: 0 8px 28px rgba(0, 201, 177, 0.4);
+    }
 
-    @keyframes bounce {
+    .scroll-indicator {
+      position: absolute;
+      bottom: max(1.5rem, env(safe-area-inset-bottom));
+      left: 0; right: 0; margin: 0 auto; width: fit-content;
+      z-index: 10; pointer-events: none; white-space: nowrap;
+      display: flex; flex-direction: column; align-items: center; gap: 0.4rem;
+      font-family: 'DM Sans', sans-serif; font-size: 0.68rem; font-weight: 500;
+      letter-spacing: 0.15em; text-transform: uppercase;
+      color: var(--muted);
+      animation: fadeInUp 0.8s 1s ease both;
+      transition: opacity 0.4s, color 0.8s;
+    }
+    .scroll-indicator.gone { opacity: 0; }
+    .hero-stage.flooded .scroll-indicator { color: rgba(240, 244, 255, 0.4); }
+    .scroll-indicator svg { animation: bounceDown 2s ease-in-out infinite; }
+
+    @keyframes bounceDown {
       0%, 100% { transform: translateY(0); }
-      50%       { transform: translateY(7px); }
+      50%       { transform: translateY(6px); }
+    }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to   { opacity: 1; transform: translateY(0); }
     }
 
-    /* Wave canvas */
-    .wave-layer {
-      position: absolute;
-      inset: 0;
-      z-index: 5;
-      pointer-events: none;
-    }
-
-    #waveCanvas {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-    }
-
-    /* ── SECTIONS ───────────────────────────────────────────── */
+    /* ── SECTIONS ── */
     section:not(#hero) {
       padding: 6rem 2rem;
-      padding-left: max(2rem, env(safe-area-inset-left));
+      padding-left:  max(2rem, env(safe-area-inset-left));
       padding-right: max(2rem, env(safe-area-inset-right));
     }
+    .section-inner { max-width: 1100px; margin: 0 auto; }
 
-    /* Services */
-    #services { background: var(--aqua-dark); }
+    .section-heading { font-size: clamp(1.8rem, 4vw, 2.8rem); color: var(--text); text-align: center; margin-bottom: 0.75rem; }
+    .section-sub     { font-family: 'DM Sans', sans-serif; text-align: center; color: var(--muted); font-size: 1rem; margin-bottom: 3.5rem; }
 
-    .s-heading {
-      font-size: clamp(1.75rem, 5vw, 2.6rem);
-      font-weight: 800;
-      text-align: center;
-      color: var(--white);
-      letter-spacing: -0.025em;
-      margin-bottom: 0.6rem;
-    }
+    .section-divider { height: 1px; background: linear-gradient(90deg, transparent, rgba(0,201,177,0.35), transparent); }
 
-    .s-sub {
-      text-align: center;
-      color: rgba(255,255,255,0.65);
-      font-size: 1rem;
-      margin-bottom: 3.5rem;
-    }
+    /* ── SERVICES ── */
+    #services { background: var(--bg); }
 
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 1.5rem;
-      max-width: 1080px;
-      margin: 0 auto;
-    }
+    .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
 
     .card {
-      background: rgba(255,255,255,0.07);
-      border: 1.5px solid rgba(255,255,255,0.2);
-      border-radius: 14px;
-      padding: 2.25rem 1.75rem;
-      transition: background 0.3s, transform 0.3s, border-color 0.3s;
+      position: relative; overflow: hidden;
+      background: var(--bg); border: 1px solid var(--border);
+      border-radius: 16px; padding: 2.5rem;
+      box-shadow: var(--shadow);
+      transition: border-color 0.3s, box-shadow 0.3s, transform 0.3s;
     }
-
-    /* On mobile, avoid hover states that get stuck on touch */
+    /* teal top accent */
+    .card::after {
+      content: ''; position: absolute; top: 0; left: 2.5rem;
+      width: 40px; height: 4px; background: var(--teal); border-radius: 0 0 2px 2px;
+    }
+    /* shimmer */
+    .card::before {
+      content: ''; position: absolute; inset: 0;
+      background: linear-gradient(90deg, transparent, rgba(0,201,177,0.05), transparent);
+      transform: translateX(-100%); border-radius: inherit; z-index: 0;
+    }
     @media (hover: hover) {
-      .card:hover {
-        background: rgba(255,255,255,0.14);
-        border-color: rgba(255,255,255,0.4);
-        transform: translateY(-5px);
-      }
+      .card:hover { border-color: rgba(0,201,177,0.35); box-shadow: var(--shadow-lg); transform: translateY(-4px); }
+      .card:hover::before { animation: shimmer 0.65s ease forwards; }
     }
+    @keyframes shimmer { from { transform: translateX(-100%); } to { transform: translateX(200%); } }
 
-    .card-icon { width: 52px; height: 52px; margin-bottom: 1.4rem; }
+    .card-icon { width: 48px; height: 48px; margin-bottom: 1.5rem; position: relative; z-index: 1; display: block; }
+    .card h3   { font-size: 1.2rem; color: var(--text); margin-bottom: 0.75rem; position: relative; z-index: 1; }
+    .card p    { font-family: 'DM Sans', sans-serif; font-size: 0.95rem; color: var(--muted); line-height: 1.75; position: relative; z-index: 1; }
 
-    .card h3 {
-      font-size: 1.2rem;
-      font-weight: 700;
-      color: var(--white);
-      margin-bottom: 0.75rem;
+    /* ── WHY BUILDARK ── */
+    #about { background: var(--bg-alt); }
+
+    .why-blocks { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 3rem; }
+
+    .why-block {
+      text-align: center; padding: 2.5rem 2rem;
+      background: var(--bg); border: 1px solid var(--border);
+      border-radius: 16px; box-shadow: var(--shadow);
+      transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
     }
-
-    .card p {
-      font-size: 0.95rem;
-      color: rgba(255,255,255,0.78);
-      line-height: 1.7;
+    @media (hover: hover) {
+      .why-block:hover { border-color: rgba(0,201,177,0.3); transform: translateY(-3px); box-shadow: var(--shadow-lg); }
     }
+    .why-number { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 2.4rem; color: var(--teal); line-height: 1; margin-bottom: 1rem; }
+    .why-label  { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 1.2rem; color: var(--text); margin-bottom: 0.6rem; display: block; }
+    .why-desc   { font-family: 'DM Sans', sans-serif; font-size: 0.95rem; color: var(--muted); line-height: 1.65; }
 
-    /* About */
-    #about {
-      background: var(--navy);
-      text-align: center;
-    }
+    /* ── FAQ ── */
+    #faq { background: var(--bg); }
+    .faq-list { max-width: 740px; margin: 0 auto; display: flex; flex-direction: column; gap: 0.75rem; }
 
-    .about-body {
-      max-width: 700px;
-      margin: 1.5rem auto 0;
-      font-size: 1.08rem;
-      color: rgba(255,255,255,0.88);
-      line-height: 1.85;
+    .faq-item {
+      background: var(--bg); border: 1px solid var(--border);
+      border-radius: 12px; overflow: hidden; box-shadow: var(--shadow);
+      transition: border-color 0.3s;
     }
+    .faq-item.open { border-color: rgba(0, 201, 177, 0.35); }
 
-    /* Accent line */
-    .accent-line {
-      width: 56px;
-      height: 3px;
-      background: var(--amber);
-      border-radius: 2px;
-      margin: 1rem auto 0;
+    .faq-question {
+      width: 100%; display: flex; align-items: center; justify-content: space-between;
+      padding: 1.25rem 1.5rem; background: none; border: none;
+      color: var(--text); font-family: 'Syne', sans-serif; font-weight: 800;
+      font-size: 1rem; text-align: left; gap: 1rem; transition: color 0.2s;
     }
+    .faq-question:hover { color: var(--teal); }
 
-    /* FAQ */
-    #faq {
-      background: var(--purple-deep);
-      text-align: center;
+    .faq-icon {
+      flex-shrink: 0; width: 26px; height: 26px; border-radius: 50%;
+      border: 1.5px solid rgba(0,201,177,0.5);
+      display: flex; align-items: center; justify-content: center;
+      color: var(--teal); font-size: 1.2rem; line-height: 1; font-style: normal;
+      font-family: 'DM Sans', sans-serif; font-weight: 400;
+      transition: transform 0.35s cubic-bezier(0.34,1.56,0.64,1), background 0.2s, color 0.2s, border-color 0.2s;
     }
+    .faq-item.open .faq-icon { transform: rotate(45deg); background: var(--teal); color: #fff; border-color: var(--teal); }
 
-    .faq-list {
-      max-width: 700px;
-      margin: 2rem auto 0;
-      text-align: left;
-      display: flex;
-      flex-direction: column;
-      gap: 2rem;
-    }
+    .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; }
+    .faq-item.open .faq-answer { max-height: 500px; }
+    .faq-answer-inner { padding: 0 1.5rem 1.25rem; font-family: 'DM Sans', sans-serif; font-size: 0.95rem; color: var(--muted); line-height: 1.8; }
 
-    .faq-q {
-      font-size: 1.05rem;
-      font-weight: 700;
-      color: var(--white);
-      margin-bottom: 0.5rem;
-    }
+    /* ── CONTACT ── */
+    #contact { background: var(--bg-alt); }
+    .contact-inner { display: grid; grid-template-columns: 1fr 1.25fr; gap: 5rem; align-items: start; max-width: 1100px; margin: 0 auto; }
 
-    .faq-a {
-      font-size: 0.95rem;
-      color: rgba(255,255,255,0.78);
-      line-height: 1.7;
-    }
+    .contact-heading { font-size: clamp(2rem, 4vw, 3rem); color: var(--text); margin-bottom: 1.25rem; line-height: 1.1; }
+    .contact-pitch   { font-family: 'DM Sans', sans-serif; font-size: 1.05rem; color: var(--muted); line-height: 1.75; margin-bottom: 2rem; }
+    .contact-links   { display: flex; flex-direction: column; gap: 0.75rem; }
 
-    /* Contact */
-    #contact {
-      background: var(--purple-deep);
-      text-align: center;
+    .contact-link {
+      display: inline-flex; align-items: center; gap: 0.6rem;
+      padding: 0.6rem 1.25rem;
+      background: rgba(0,201,177,0.08); border: 1px solid rgba(0,201,177,0.2);
+      border-radius: 50px; color: var(--text); text-decoration: none;
+      font-family: 'DM Sans', sans-serif; font-size: 0.9rem; font-weight: 500;
+      width: fit-content;
+      transition: background 0.2s, color 0.2s, border-color 0.2s, box-shadow 0.2s;
     }
+    .contact-link:hover { background: var(--teal); color: #fff; border-color: var(--teal); box-shadow: 0 4px 16px rgba(0,201,177,0.25); }
 
-    .contact-form {
-      max-width: 560px;
-      margin: 2.5rem auto 0;
-      text-align: left;
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-    }
-
-    .form-row {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1rem;
-    }
-
-    .form-field {
-      display: flex;
-      flex-direction: column;
-      gap: 0.4rem;
-    }
+    .contact-form { display: flex; flex-direction: column; gap: 1rem; }
+    .form-row     { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .form-field   { display: flex; flex-direction: column; gap: 0.4rem; }
 
     .form-field label {
-      font-size: 0.82rem;
-      font-weight: 600;
-      letter-spacing: 0.07em;
-      color: rgba(255,255,255,0.55);
-      text-transform: uppercase;
+      font-family: 'DM Sans', sans-serif; font-size: 0.75rem; font-weight: 500;
+      letter-spacing: 0.08em; color: var(--muted); text-transform: uppercase;
     }
-
     .form-field input,
     .form-field textarea {
-      background: rgba(255,255,255,0.07);
-      border: 1.5px solid rgba(255,255,255,0.15);
-      border-radius: 8px;
-      padding: 0.75rem 1rem;
-      font-size: 0.97rem;
-      color: #fff;
-      font-family: inherit;
-      transition: border-color 0.2s, background 0.2s;
-      outline: none;
-      -webkit-appearance: none;
+      background: var(--bg); border: 1px solid rgba(0,0,0,0.12);
+      border-radius: 10px; padding: 0.9rem 1.2rem;
+      font-family: 'DM Sans', sans-serif; font-size: 0.97rem; color: var(--text);
+      outline: none; -webkit-appearance: none;
+      transition: border-color 0.2s, box-shadow 0.2s;
     }
-
     .form-field input::placeholder,
-    .form-field textarea::placeholder {
-      color: rgba(255,255,255,0.25);
-    }
-
+    .form-field textarea::placeholder { color: rgba(17,24,39,0.25); }
     .form-field input:focus,
-    .form-field textarea:focus {
-      border-color: var(--aqua);
-      background: rgba(255,255,255,0.11);
-    }
-
-    .form-field textarea {
-      resize: vertical;
-      min-height: 120px;
-    }
+    .form-field textarea:focus { border-color: var(--teal); box-shadow: 0 0 0 3px rgba(0,201,177,0.15); }
+    .form-field textarea { resize: vertical; min-height: 130px; }
 
     .form-submit {
-      margin-top: 0.5rem;
-      padding: 1rem 2rem;
-      background: var(--aqua);
-      color: #fff;
-      font-size: 1rem;
-      font-weight: 700;
-      border: none;
-      border-radius: 9px;
-      cursor: pointer;
-      letter-spacing: 0.04em;
-      transition: background 0.2s, transform 0.2s;
-      touch-action: manipulation;
-      width: 100%;
+      margin-top: 0.25rem; padding: 1rem; width: 100%;
+      background: var(--teal); color: #fff;
+      font-family: 'Syne', sans-serif; font-weight: 800; font-size: 0.9rem;
+      letter-spacing: 0.1em; text-transform: uppercase; border: none; border-radius: 10px;
+      transition: background 0.2s, box-shadow 0.2s, transform 0.2s;
+    }
+    .form-submit:hover:not(:disabled) { background: var(--teal-dk); box-shadow: 0 4px 24px rgba(0,201,177,0.3); transform: translateY(-1px); }
+    .form-submit:disabled { opacity: 0.6; cursor: not-allowed; }
+
+    .form-status { border-radius: 8px; padding: 0.75rem 1rem; font-family: 'DM Sans', sans-serif; font-size: 0.9rem; display: none; }
+    .form-status.success { display: block; background: rgba(0,201,177,0.1); border: 1px solid rgba(0,201,177,0.35); color: var(--teal-dk); }
+    .form-status.error   { display: block; background: rgba(239,68,68,0.08); border: 1px solid rgba(239,68,68,0.3); color: #dc2626; }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--bg); border-top: 1px solid var(--border);
+      padding: 1.75rem 2.5rem;
+      padding-left:  max(2.5rem, env(safe-area-inset-left));
+      padding-right: max(2.5rem, env(safe-area-inset-right));
+      padding-bottom: max(1.75rem, env(safe-area-inset-bottom));
+    }
+    .footer-inner { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; }
+    .footer-brand { display: flex; align-items: center; gap: 0.6rem; text-decoration: none; }
+    .footer-logo-wrap { width: 28px; height: 28px; border-radius: 50%; overflow: hidden; flex-shrink: 0; }
+    .footer-logo-wrap img { width: 112%; height: 112%; margin: -6%; object-fit: cover; display: block; }
+    .footer-wordmark { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 0.82rem; letter-spacing: 0.18em; color: var(--muted); transition: color 0.2s; }
+    .footer-brand:hover .footer-wordmark { color: var(--text); }
+    .footer-copy  { font-family: 'DM Sans', sans-serif; font-size: 0.8rem; color: var(--muted); }
+    .footer-links { display: flex; align-items: center; gap: 1rem; }
+    .footer-link  { display: inline-flex; align-items: center; gap: 0.4rem; color: var(--muted); text-decoration: none; font-family: 'DM Sans', sans-serif; font-size: 0.8rem; transition: color 0.2s; }
+    .footer-link:hover { color: var(--teal); }
+
+    /* ── SCROLL ANIMATIONS ── */
+    .animate-on-scroll { opacity: 0; transform: translateY(30px); transition: opacity 0.6s ease, transform 0.6s ease; }
+    .animate-on-scroll.is-visible { opacity: 1; transform: translateY(0); }
+    .faq-item.animate-on-scroll { opacity: 0; transform: translateX(-20px); }
+    .faq-item.animate-on-scroll.is-visible { opacity: 1; transform: translateX(0); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 960px) {
+      .why-blocks     { grid-template-columns: 1fr; gap: 1rem; }
+      .contact-inner  { grid-template-columns: 1fr; gap: 3rem; }
     }
 
-    .form-submit:hover:not(:disabled) {
-      background: var(--aqua-dark);
-      transform: translateY(-2px);
-    }
+    @media (max-width: 700px) {
+      .nav-links      { display: none; }
+      .nav-hamburger  { display: flex; }
+      #navbar         { padding: 0.85rem 1.4rem; padding-left: max(1.4rem, env(safe-area-inset-left)); padding-right: max(1.4rem, env(safe-area-inset-right)); }
 
-    .form-submit:disabled {
-      opacity: 0.6;
-      cursor: not-allowed;
-    }
+      section:not(#hero) { padding: 4rem 1.25rem; padding-left: max(1.25rem, env(safe-area-inset-left)); padding-right: max(1.25rem, env(safe-area-inset-right)); }
 
-    .form-status {
-      text-align: center;
-      font-size: 0.95rem;
-      border-radius: 8px;
-      padding: 0.75rem 1rem;
-      display: none;
-    }
+      .cards         { grid-template-columns: 1fr; }
 
-    .form-status.success {
-      display: block;
-      background: rgba(0, 180, 216, 0.15);
-      border: 1px solid rgba(0, 180, 216, 0.4);
-      color: #00B4D8;
-    }
+      /* Less bottom reserve on mobile — ark is smaller */
+      .hero-content  { inset: 0 0 140px 0; padding-top: max(4rem, 10vh); }
 
-    .form-status.error {
-      display: block;
-      background: rgba(239, 68, 68, 0.1);
-      border: 1px solid rgba(239, 68, 68, 0.3);
-      color: #f87171;
-    }
-
-    .cta-email {
-      display: block;
-      margin-top: 1.75rem;
-      font-size: 0.88rem;
-      color: rgba(255,255,255,0.3);
-      letter-spacing: 0.06em;
+      .footer-inner  { flex-direction: column; text-align: center; gap: 0.75rem; }
+      .footer-links  { justify-content: center; }
     }
 
     @media (max-width: 560px) {
       .form-row { grid-template-columns: 1fr; }
-    }
-
-    /* Footer */
-    footer {
-      background: var(--purple-deep);
-      border-top: 1px solid rgba(255,255,255,0.07);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 0.35rem;
-      text-align: center;
-      padding: 1.6rem 2rem;
-      padding-bottom: max(1.6rem, env(safe-area-inset-bottom));
-      color: rgba(255,255,255,0.35);
-      font-size: 0.8rem;
-      letter-spacing: 0.05em;
-    }
-
-    /* ── RESPONSIVE ─────────────────────────────────────────── */
-    @media (max-width: 700px) {
-      .nav-links      { display: none; }
-      .nav-hamburger  { display: flex; }
-      #navbar         { padding: 0.85rem 1.4rem; }
-
-      section:not(#hero) { padding: 4.5rem 1.25rem; }
-
-      .cards { grid-template-columns: 1fr; }
-
-      .hero-center { gap: 1rem; }
-    }
-
-    @media (max-width: 380px) {
-      .hero-logo-wrap {
-        width: clamp(150px, 55vw, 200px);
-        height: clamp(150px, 55vw, 200px);
-      }
+      .contact-inner { gap: 2.5rem; }
     }
   </style>
 </head>
@@ -694,55 +491,48 @@
 <nav id="navbar" aria-label="Main navigation">
   <a class="nav-brand" href="#" aria-label="BuildArk home">
     <div class="nav-logo-wrap">
-      <img src="buildarklogo.jpg" alt="BuildArk — custom web design and app development for small businesses" width="36" height="36" />
+      <img src="buildarklogo.jpg" alt="BuildArk" width="36" height="36" />
     </div>
     <span class="nav-wordmark">BUILDARK</span>
   </a>
-
   <ul class="nav-links">
     <li><a href="#services">Services</a></li>
     <li><a href="#about">About</a></li>
     <li><a href="#faq">FAQ</a></li>
     <li><a href="#contact" class="nav-cta">Let's Talk</a></li>
   </ul>
-
   <button class="nav-hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
     <span></span><span></span><span></span>
   </button>
 </nav>
 
-<!-- Mobile drawer -->
 <div id="mobileMenu" role="dialog" aria-modal="true" aria-label="Navigation">
   <a href="#services" id="m-services">Services</a>
   <a href="#about"    id="m-about">About</a>
   <a href="#faq"      id="m-faq">FAQ</a>
-  <a href="#contact" id="m-contact" class="cta-mobile">Let's Talk</a>
+  <a href="#contact"  id="m-contact" class="cta-mobile">Let's Talk</a>
 </div>
 
 <!-- ══ HERO ══════════════════════════════════════════════════════ -->
-<section id="hero">
+<section id="hero" aria-label="Hero">
   <div class="hero-stage" id="heroStage">
 
-    <!-- Wave canvas -->
+    <!-- Everything (ark + waves) drawn on this canvas -->
     <div class="wave-layer">
       <canvas id="waveCanvas"></canvas>
     </div>
 
-    <!-- Logo + tagline -->
-    <div class="hero-center">
-      <div class="hero-logo-wrap">
-        <img class="hero-logo" src="buildarklogo.jpg" alt="BuildArk — custom web design and app development for small businesses" width="280" height="280" />
-      </div>
-      <h1 class="hero-tagline">Custom Websites &amp; Apps for Small Businesses</h1>
+    <div class="hero-content">
+      <h1 class="hero-h1">Custom Websites &amp; Apps for Small Businesses</h1>
+      <p class="hero-tagline">We build the tools that carry your business forward.</p>
+      <a href="#contact" class="hero-cta">Start a Project &rarr;</a>
     </div>
 
-    <!-- Scroll hint -->
-    <div class="scroll-hint" id="scrollHint">
+    <div class="scroll-indicator" id="scrollHint" aria-hidden="true">
       <span>Scroll to explore</span>
-      <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
-           stroke="currentColor" stroke-width="2" stroke-linecap="round">
-        <line x1="10" y1="3" x2="10" y2="17"/>
-        <polyline points="4,11 10,17 16,11"/>
+      <svg width="18" height="18" viewBox="0 0 18 18" fill="none"
+           stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="4,6 9,12 14,6"/>
       </svg>
     </div>
 
@@ -751,164 +541,448 @@
 
 <!-- ══ SERVICES ══════════════════════════════════════════════════ -->
 <section id="services" aria-labelledby="services-heading">
-  <h2 class="s-heading" id="services-heading">What We Build</h2>
-  <p class="s-sub">End-to-end solutions designed around your business</p>
-
-  <div class="cards">
-
-    <div class="card">
-      <svg class="card-icon" viewBox="0 0 52 52" fill="none" aria-hidden="true">
-        <rect x="4" y="10" width="44" height="32" rx="4" stroke="#00B4D8" stroke-width="2.5"/>
-        <path d="M14 26l6 5-6 5" stroke="#EF9F27" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="M26 36h12" stroke="#EF9F27" stroke-width="2.5" stroke-linecap="round"/>
-        <path d="M10 18h8M10 18v4M18 18v4" stroke="#00B4D8" stroke-width="1.5" stroke-linecap="round"/>
-        <circle cx="22" cy="22" r="1.5" fill="#00B4D8"/>
-      </svg>
-      <h3>Custom Apps</h3>
-      <p>We modernize how your business operates with tailored applications built to fit your exact workflow — not the other way around.</p>
+  <div class="section-inner">
+    <h2 class="section-heading animate-on-scroll" id="services-heading">What We Build</h2>
+    <p class="section-sub animate-on-scroll" style="transition-delay:.1s">End-to-end solutions designed around your business</p>
+    <div class="cards">
+      <div class="card animate-on-scroll" style="transition-delay:0s">
+        <svg class="card-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <rect x="4"  y="4"  width="17" height="17" rx="3" stroke="#00C9B1" stroke-width="1.5" fill="rgba(0,201,177,0.07)"/>
+          <rect x="27" y="4"  width="17" height="17" rx="3" stroke="#00C9B1" stroke-width="1.5" fill="rgba(0,201,177,0.04)"/>
+          <rect x="4"  y="27" width="17" height="17" rx="3" stroke="#00C9B1" stroke-width="1.5" fill="rgba(0,201,177,0.04)"/>
+          <rect x="27" y="27" width="17" height="17" rx="3" stroke="#3B82F6" stroke-width="1.5" fill="rgba(59,130,246,0.08)"/>
+          <circle cx="12.5" cy="12.5" r="2.5" fill="#00C9B1"/>
+          <circle cx="35.5" cy="35.5" r="2.5" fill="#3B82F6"/>
+          <line x1="21" y1="12.5" x2="27" y2="12.5" stroke="rgba(0,201,177,0.45)" stroke-width="1.5"/>
+          <line x1="35.5" y1="21" x2="35.5" y2="27" stroke="rgba(59,130,246,0.45)" stroke-width="1.5"/>
+        </svg>
+        <h3>Custom Apps</h3>
+        <p>We modernize how your business operates with tailored applications built to fit your exact workflow — not the other way around.</p>
+      </div>
+      <div class="card animate-on-scroll" style="transition-delay:.1s">
+        <svg class="card-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <rect x="4" y="8" width="40" height="32" rx="4" stroke="#00C9B1" stroke-width="1.5"/>
+          <line x1="4" y1="19" x2="44" y2="19" stroke="#00C9B1" stroke-width="1.5" stroke-opacity="0.5"/>
+          <circle cx="10" cy="13.5" r="2" fill="#00C9B1" fill-opacity="0.55"/>
+          <circle cx="17" cy="13.5" r="2" fill="rgba(0,201,177,0.3)"/>
+          <rect x="22" y="11.5" width="18" height="4" rx="2" fill="rgba(0,201,177,0.18)"/>
+          <rect x="9"  y="25" width="30" height="2" rx="1" fill="rgba(0,201,177,0.22)"/>
+          <rect x="9"  y="31" width="20" height="2" rx="1" fill="rgba(0,201,177,0.14)"/>
+          <rect x="9"  y="37" width="25" height="2" rx="1" fill="rgba(0,201,177,0.09)"/>
+        </svg>
+        <h3>Web Presence</h3>
+        <p>Landing pages and full websites that look credible, load fast, and are built to convert first-time visitors into loyal customers.</p>
+      </div>
+      <div class="card animate-on-scroll" style="transition-delay:.2s">
+        <svg class="card-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <path d="M24 7 C24 7 36 13 36 27 L24 36 L12 27 C12 13 24 7 24 7Z"
+                stroke="#00C9B1" stroke-width="1.5" fill="rgba(0,201,177,0.07)" stroke-linejoin="round"/>
+          <circle cx="24" cy="22" r="4.5" stroke="#00C9B1" stroke-width="1.5" fill="rgba(0,201,177,0.14)"/>
+          <path d="M12 27 L6 36 L13 33" stroke="#3B82F6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M36 27 L42 36 L35 33" stroke="#3B82F6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M20 36 Q24 44 28 36" stroke="#00C9B1" stroke-width="1.5" stroke-linecap="round" fill="none" opacity="0.55"/>
+        </svg>
+        <h3>Our Products</h3>
+        <p>Two of our own apps live on the App Store — built for everyday users with the same craft and care we bring to every client.</p>
+      </div>
     </div>
-
-    <div class="card">
-      <svg class="card-icon" viewBox="0 0 52 52" fill="none" aria-hidden="true">
-        <circle cx="26" cy="26" r="20" stroke="#00B4D8" stroke-width="2.5"/>
-        <path d="M6 26h40"              stroke="#00B4D8" stroke-width="2"/>
-        <path d="M26 6c-5 7-5 27 0 40" stroke="#EF9F27" stroke-width="2" stroke-linecap="round"/>
-        <path d="M26 6c5 7 5 27 0 40"  stroke="#EF9F27" stroke-width="2" stroke-linecap="round"/>
-        <path d="M10 16h32M10 36h32"   stroke="#00B4D8" stroke-width="1.5" stroke-linecap="round" opacity="0.55"/>
-      </svg>
-      <h3>Web Presence</h3>
-      <p>Landing pages and full websites that look credible, load fast, and are built to convert first-time visitors into loyal customers.</p>
-    </div>
-
-    <div class="card">
-      <svg class="card-icon" viewBox="0 0 52 52" fill="none" aria-hidden="true">
-        <rect x="15" y="4" width="22" height="44" rx="4" stroke="#00B4D8" stroke-width="2.5"/>
-        <path d="M22 44h8" stroke="#EF9F27" stroke-width="2.5" stroke-linecap="round"/>
-        <rect x="19" y="11" width="14" height="9" rx="2" fill="#00B4D8" opacity="0.35"/>
-        <rect x="19" y="24" width="14" height="9" rx="2" fill="#00B4D8" opacity="0.2"/>
-        <circle cx="26" cy="8" r="1.5" fill="#00B4D8"/>
-      </svg>
-      <h3>Our Products</h3>
-      <p>Two of our own apps live on the App Store — built for everyday users with the same craft and care we bring to every client.</p>
-    </div>
-
   </div>
 </section>
 
-<!-- ══ ABOUT ══════════════════════════════════════════════════════ -->
+<div class="section-divider" aria-hidden="true"></div>
+
+<!-- ══ WHY BUILDARK ══════════════════════════════════════════════ -->
 <section id="about" aria-labelledby="about-heading">
-  <h2 class="s-heading" id="about-heading">Why BuildArk?</h2>
-  <div class="accent-line"></div>
-  <p class="about-body">
-    We are a personalized technology partner for small businesses, startups, and growing
-    companies. We replace outdated workflows with smart tools, and build digital presences
-    that make you stand out — all with hands-on service that big agencies simply can't offer.
-    Whether you need a landing page that converts, a full website redesign, or a custom app
-    built around your team's workflow, we deliver solutions that scale with your business.
-  </p>
+  <div class="section-inner">
+    <h2 class="section-heading animate-on-scroll" id="about-heading">Why BuildArk?</h2>
+    <p class="section-sub animate-on-scroll" style="transition-delay:.1s">We work differently — by design.</p>
+    <div class="why-blocks">
+      <div class="why-block animate-on-scroll" style="transition-delay:0s">
+        <div class="why-number">01</div>
+        <span class="why-label">Boutique</span>
+        <p class="why-desc">A small number of clients. Deep focus on each.</p>
+      </div>
+      <div class="why-block animate-on-scroll" style="transition-delay:.15s">
+        <div class="why-number">02</div>
+        <span class="why-label">Full-Stack</span>
+        <p class="why-desc">Design, development, and deployment. End to end.</p>
+      </div>
+      <div class="why-block animate-on-scroll" style="transition-delay:.3s">
+        <div class="why-number">03</div>
+        <span class="why-label">Yours</span>
+        <p class="why-desc">You own everything. Code, data, accounts — all of it.</p>
+      </div>
+    </div>
+  </div>
 </section>
+
+<div class="section-divider" aria-hidden="true"></div>
 
 <!-- ══ FAQ ═══════════════════════════════════════════════════════ -->
 <section id="faq" aria-labelledby="faq-heading">
-  <h2 class="s-heading" id="faq-heading">Frequently Asked Questions</h2>
-  <div class="accent-line"></div>
-  <div class="faq-list">
-    <div class="faq-item">
-      <h3 class="faq-q">What does BuildArk do?</h3>
-      <p class="faq-a">BuildArk is a technology partner for small businesses, startups, and growing companies. We build custom websites, landing pages, and applications that modernize how businesses operate and help them stand out online — all with hands-on, personalized service.</p>
-    </div>
-    <div class="faq-item">
-      <h3 class="faq-q">What services does BuildArk offer?</h3>
-      <p class="faq-a">BuildArk offers three core services: custom app development tailored to your business workflow; web presence services including landing pages and full websites designed to convert visitors; and our own consumer apps published on the App Store.</p>
-    </div>
-    <div class="faq-item">
-      <h3 class="faq-q">Who is BuildArk for?</h3>
-      <p class="faq-a">BuildArk is built for small businesses, startups, and growing companies that want a personalized technology partner — especially those that lack in-house tech expertise.</p>
-    </div>
-    <div class="faq-item">
-      <h3 class="faq-q">Does BuildArk build websites for small businesses?</h3>
-      <p class="faq-a">Yes. BuildArk specializes in building landing pages and full websites for small businesses. Every site is designed to look credible, load fast on mobile, and convert first-time visitors into loyal customers.</p>
-    </div>
-    <div class="faq-item">
-      <h3 class="faq-q">How can I contact BuildArk?</h3>
-      <p class="faq-a">You can reach BuildArk by emailing hello@buildark.io or by messaging on Instagram at @buildarksolutions.</p>
+  <div class="section-inner">
+    <h2 class="section-heading animate-on-scroll" id="faq-heading">Frequently Asked Questions</h2>
+    <p class="section-sub animate-on-scroll" style="transition-delay:.1s">Everything you need to know before reaching out.</p>
+    <div class="faq-list">
+      <div class="faq-item animate-on-scroll" style="transition-delay:0s">
+        <button class="faq-question" aria-expanded="false">What does BuildArk do?<span class="faq-icon" aria-hidden="true">+</span></button>
+        <div class="faq-answer" role="region"><div class="faq-answer-inner">BuildArk is a technology partner for small businesses, startups, and growing companies. We build custom websites, landing pages, and applications that modernize how businesses operate and help them stand out online — all with hands-on, personalized service.</div></div>
+      </div>
+      <div class="faq-item animate-on-scroll" style="transition-delay:.08s">
+        <button class="faq-question" aria-expanded="false">What services does BuildArk offer?<span class="faq-icon" aria-hidden="true">+</span></button>
+        <div class="faq-answer" role="region"><div class="faq-answer-inner">BuildArk offers three core services: custom app development tailored to your business workflow; web presence services including landing pages and full websites designed to convert visitors; and our own consumer apps published on the App Store.</div></div>
+      </div>
+      <div class="faq-item animate-on-scroll" style="transition-delay:.16s">
+        <button class="faq-question" aria-expanded="false">Who is BuildArk for?<span class="faq-icon" aria-hidden="true">+</span></button>
+        <div class="faq-answer" role="region"><div class="faq-answer-inner">BuildArk is built for small businesses, startups, and growing companies that want a personalized technology partner — especially those that lack in-house tech expertise.</div></div>
+      </div>
+      <div class="faq-item animate-on-scroll" style="transition-delay:.24s">
+        <button class="faq-question" aria-expanded="false">Does BuildArk build websites for small businesses?<span class="faq-icon" aria-hidden="true">+</span></button>
+        <div class="faq-answer" role="region"><div class="faq-answer-inner">Yes. BuildArk specializes in building landing pages and full websites for small businesses. Every site is designed to look credible, load fast on mobile, and convert first-time visitors into loyal customers.</div></div>
+      </div>
+      <div class="faq-item animate-on-scroll" style="transition-delay:.32s">
+        <button class="faq-question" aria-expanded="false">How can I contact BuildArk?<span class="faq-icon" aria-hidden="true">+</span></button>
+        <div class="faq-answer" role="region"><div class="faq-answer-inner">You can reach BuildArk by emailing hello@buildark.io or by messaging on Instagram at @buildarksolutions.</div></div>
+      </div>
     </div>
   </div>
 </section>
 
 <!-- ══ CONTACT ══════════════════════════════════════════════════ -->
 <section id="contact" aria-labelledby="contact-heading">
-  <h2 class="s-heading" id="contact-heading">Ready to build something?</h2>
-  <div class="accent-line"></div>
-
-  <form class="contact-form" id="contactForm" novalidate>
-    <div class="form-row">
-      <div class="form-field">
-        <label for="cf-name">Name *</label>
-        <input type="text" id="cf-name" name="name" placeholder="Jane Smith" required autocomplete="name" />
-      </div>
-      <div class="form-field">
-        <label for="cf-email">Email *</label>
-        <input type="email" id="cf-email" name="email" placeholder="jane@company.com" required autocomplete="email" />
-      </div>
-    </div>
-    <div class="form-row">
-      <div class="form-field">
-        <label for="cf-phone">Phone</label>
-        <input type="tel" id="cf-phone" name="phone" placeholder="+1 (555) 000-0000" autocomplete="tel" />
-      </div>
-      <div class="form-field">
-        <label for="cf-company">Company <span style="opacity:0.45;font-weight:400">(optional)</span></label>
-        <input type="text" id="cf-company" name="company" placeholder="Acme Inc." autocomplete="organization" />
+  <div class="contact-inner">
+    <div class="contact-left animate-on-scroll">
+      <h2 class="contact-heading" id="contact-heading">Ready to build something?</h2>
+      <p class="contact-pitch">Tell us what you're working on. Whether it's a landing page, a full web app, or something in between — we'd love to hear about it.</p>
+      <div class="contact-links">
+        <a href="mailto:hello@buildark.io" class="contact-link">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="3"/><polyline points="2,4 12,13 22,4"/></svg>
+          hello@buildark.io
+        </a>
+        <a href="https://www.instagram.com/buildarksolutions/" target="_blank" rel="noopener" class="contact-link">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4.5"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+          @buildarksolutions
+        </a>
       </div>
     </div>
-    <div class="form-field">
-      <label for="cf-message">Message *</label>
-      <textarea id="cf-message" name="message" placeholder="Tell us what you're looking to build…" required></textarea>
+    <div class="contact-right animate-on-scroll" style="transition-delay:.15s">
+      <form class="contact-form" id="contactForm" novalidate>
+        <div class="form-row">
+          <div class="form-field">
+            <label for="cf-name">Name *</label>
+            <input type="text" id="cf-name" name="name" placeholder="Jane Smith" required autocomplete="name" />
+          </div>
+          <div class="form-field">
+            <label for="cf-email">Email *</label>
+            <input type="email" id="cf-email" name="email" placeholder="jane@company.com" required autocomplete="email" />
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-field">
+            <label for="cf-phone">Phone</label>
+            <input type="tel" id="cf-phone" name="phone" placeholder="+1 (555) 000-0000" autocomplete="tel" />
+          </div>
+          <div class="form-field">
+            <label for="cf-company">Company <span style="opacity:.45;font-weight:400">(optional)</span></label>
+            <input type="text" id="cf-company" name="company" placeholder="Acme Inc." autocomplete="organization" />
+          </div>
+        </div>
+        <div class="form-field">
+          <label for="cf-message">Message *</label>
+          <textarea id="cf-message" name="message" placeholder="Tell us what you're looking to build…" required></textarea>
+        </div>
+        <div class="form-status" id="formStatus" role="alert"></div>
+        <button type="submit" class="form-submit" id="formSubmit">Send Message</button>
+      </form>
     </div>
-    <div class="form-status" id="formStatus" role="alert"></div>
-    <button type="submit" class="form-submit" id="formSubmit">Send Message</button>
-  </form>
-
-  <span class="cta-email">hello@buildark.io</span>
+  </div>
 </section>
 
 <!-- ══ FOOTER ═══════════════════════════════════════════════════ -->
 <footer>
-  <div>&copy; 2026 BuildArk. All rights reserved.</div>
-  <a class="footer-ig" href="https://www.instagram.com/buildarksolutions/" target="_blank" rel="noopener" aria-label="BuildArk on Instagram">
-    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-      <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
-      <circle cx="12" cy="12" r="4.5"/>
-      <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>
-    </svg>
-    @buildarksolutions
-  </a>
+  <div class="footer-inner">
+    <a class="footer-brand" href="#" aria-label="BuildArk home">
+      <div class="footer-logo-wrap"><img src="buildarklogo.jpg" alt="BuildArk" width="28" height="28" /></div>
+      <span class="footer-wordmark">BUILDARK</span>
+    </a>
+    <span class="footer-copy">&copy; 2026 BuildArk. All rights reserved.</span>
+    <div class="footer-links">
+      <a href="mailto:hello@buildark.io" class="footer-link">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="3"/><polyline points="2,4 12,13 22,4"/></svg>
+        hello@buildark.io
+      </a>
+      <a href="https://www.instagram.com/buildarksolutions/" target="_blank" rel="noopener" class="footer-link" aria-label="BuildArk on Instagram">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4.5"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+        @buildarksolutions
+      </a>
+    </div>
+  </div>
 </footer>
 
 <!-- ══ SCRIPTS ═══════════════════════════════════════════════════ -->
 <script>
-  /* ──────────────────────────────────────────────────────────
-     iOS Safari viewport height fix
-     100vh includes the browser chrome bar on iOS, causing
-     layout shifts. We use a --vh custom property instead.
-  ────────────────────────────────────────────────────────── */
+  /* ── iOS viewport height fix ── */
   function setVH() {
-    const vh = window.innerHeight * 0.01;
-    document.documentElement.style.setProperty('--vh', `${vh}px`);
+    document.documentElement.style.setProperty('--vh', `${window.innerHeight * 0.01}px`);
   }
   setVH();
   window.addEventListener('resize', setVH, { passive: true });
-  /* Also fire on orientation change — iOS fires resize late */
-  window.addEventListener('orientationchange', () => {
-    setTimeout(setVH, 200);
-  }, { passive: true });
+  window.addEventListener('orientationchange', () => setTimeout(setVH, 200), { passive: true });
+  if (window.visualViewport) {
+    window.visualViewport.addEventListener('resize', () => { setVH(); resizeCanvas(); }, { passive: true });
+  }
 
-  /* ──────────────────────────────────────────────────────────
-     Mobile nav
-  ────────────────────────────────────────────────────────── */
-  const hamburger   = document.getElementById('hamburger');
-  const mobileMenu  = document.getElementById('mobileMenu');
+  /* ── DOM refs ── */
+  const navbar     = document.getElementById('navbar');
+  const heroEl     = document.getElementById('hero');
+  const heroStage  = document.getElementById('heroStage');
+  const scrollHint = document.getElementById('scrollHint');
+  const themeColor = document.getElementById('themeColor');
+  const canvas     = document.getElementById('waveCanvas');
+  const ctx        = canvas.getContext('2d');
+
+  /* ── Canvas sizing ── */
+  let wavePhase = 0, scrollProg = 0, canvasW = 0, canvasH = 0, dpr = 1;
+
+  function resizeCanvas() {
+    dpr     = Math.min(window.devicePixelRatio || 1, 2);
+    canvasW = canvas.offsetWidth;
+    canvasH = canvas.offsetHeight;
+    canvas.width  = canvasW * dpr;
+    canvas.height = canvasH * dpr;
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+  }
+  window.addEventListener('resize', resizeCanvas, { passive: true });
+  resizeCanvas();
+
+  /* ── Rounded rect helper (cross-browser) ── */
+  function rRect(x, y, w, h, r) {
+    ctx.beginPath();
+    ctx.moveTo(x + r, y);
+    ctx.lineTo(x + w - r, y);
+    ctx.quadraticCurveTo(x + w, y, x + w, y + r);
+    ctx.lineTo(x + w, y + h - r);
+    ctx.quadraticCurveTo(x + w, y + h, x + w - r, y + h);
+    ctx.lineTo(x + r, y + h);
+    ctx.quadraticCurveTo(x, y + h, x, y + h - r);
+    ctx.lineTo(x, y + r);
+    ctx.quadraticCurveTo(x, y, x + r, y);
+    ctx.closePath();
+  }
+
+  /* ── Wave drawing ── */
+  function drawWave(color, baseY, amp, freq, phaseOff) {
+    ctx.beginPath();
+    ctx.moveTo(0, canvasH);
+    for (let x = 0; x <= canvasW; x += 3) {
+      ctx.lineTo(x, baseY + Math.sin((x / canvasW) * Math.PI * 2 * freq + wavePhase + phaseOff) * amp);
+    }
+    ctx.lineTo(canvasW, canvasH);
+    ctx.closePath();
+    ctx.fillStyle = color;
+    ctx.fill();
+  }
+
+  /*
+   * Ark drawing — split into hull (below waterline) and superstructure (above).
+   * Drawing order: backWave → midWave → hull → frontWave → superstructure
+   * This makes the front wave wash over the hull naturally.
+   *
+   * Local coordinate system (before translate/rotate/scale):
+   *   origin = waterline center of hull
+   *   +y = downward (into water), -y = upward (into air)
+   */
+  function drawArkHull(cx, cy, angle, s) {
+    ctx.save();
+    ctx.translate(cx, cy);
+    ctx.rotate(angle);
+    ctx.scale(s, s);
+
+    /* Hull body */
+    ctx.beginPath();
+    ctx.moveTo(-100, 0);
+    ctx.bezierCurveTo(-100, 0, -88, 26, -58, 28);
+    ctx.lineTo(58, 28);
+    ctx.bezierCurveTo(88, 26, 100, 0, 100, 0);
+    ctx.closePath();
+    ctx.fillStyle = 'rgba(6, 16, 44, 0.93)';
+    ctx.fill();
+    ctx.strokeStyle = 'rgba(0, 201, 177, 0.5)';
+    ctx.lineWidth = 1.5;
+    ctx.stroke();
+
+    /* Portholes */
+    [-62, -22, 18, 58].forEach(px => {
+      ctx.beginPath();
+      ctx.arc(px, 12, 6, 0, Math.PI * 2);
+      ctx.strokeStyle = 'rgba(0, 201, 177, 0.3)';
+      ctx.lineWidth = 1;
+      ctx.stroke();
+    });
+
+    ctx.restore();
+  }
+
+  function drawArkTop(cx, cy, angle, s) {
+    ctx.save();
+    ctx.translate(cx, cy);
+    ctx.rotate(angle);
+    ctx.scale(s, s);
+
+    /* Main cabin */
+    rRect(-68, -36, 136, 36, 3);
+    ctx.fillStyle = 'rgba(5, 13, 36, 0.96)';
+    ctx.fill();
+    ctx.strokeStyle = 'rgba(0, 201, 177, 0.4)';
+    ctx.lineWidth = 1;
+    ctx.stroke();
+
+    /* Cabin windows */
+    [-50, -18, 14, 46].forEach(wx => {
+      rRect(wx, -30, 24, 15, 2);
+      ctx.fillStyle = 'rgba(0, 201, 177, 0.1)';
+      ctx.fill();
+      ctx.strokeStyle = 'rgba(0, 201, 177, 0.32)';
+      ctx.lineWidth = 0.75;
+      ctx.stroke();
+    });
+
+    /* Upper cabin */
+    rRect(-40, -58, 80, 22, 2);
+    ctx.fillStyle = 'rgba(5, 13, 36, 0.96)';
+    ctx.fill();
+    ctx.strokeStyle = 'rgba(0, 201, 177, 0.3)';
+    ctx.lineWidth = 1;
+    ctx.stroke();
+
+    /* Upper windows */
+    [-30, 6].forEach(wx => {
+      rRect(wx, -54, 20, 13, 1.5);
+      ctx.fillStyle = 'rgba(0, 201, 177, 0.12)';
+      ctx.fill();
+      ctx.strokeStyle = 'rgba(0, 201, 177, 0.25)';
+      ctx.lineWidth = 0.75;
+      ctx.stroke();
+    });
+
+    /* Roof peak */
+    ctx.beginPath();
+    ctx.moveTo(-52, -58);
+    ctx.lineTo(0,   -80);
+    ctx.lineTo(52,  -58);
+    ctx.strokeStyle = 'rgba(0, 201, 177, 0.5)';
+    ctx.lineWidth = 1.5;
+    ctx.lineJoin = 'round';
+    ctx.stroke();
+
+    /* Mast */
+    ctx.beginPath();
+    ctx.moveTo(0, -80);
+    ctx.lineTo(0, -106);
+    ctx.strokeStyle = 'rgba(0, 201, 177, 0.55)';
+    ctx.lineWidth = 1.5;
+    ctx.stroke();
+
+    /* Pennant */
+    ctx.beginPath();
+    ctx.moveTo(0,  -106);
+    ctx.lineTo(17, -98);
+    ctx.lineTo(0,  -90);
+    ctx.closePath();
+    ctx.fillStyle = 'rgba(0, 201, 177, 0.4)';
+    ctx.fill();
+
+    ctx.restore();
+  }
+
+  /* ── Main animation loop ── */
+  function animate() {
+    wavePhase += 0.018;
+    ctx.clearRect(0, 0, canvasW, canvasH);
+
+    /* Ease scroll 0→0.40 to t 0→1 (quad in-out) */
+    const t    = Math.min(scrollProg / 0.40, 1);
+    const ease = t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2;
+
+    /*
+     * Wave base Y interpolation:
+     *   ease = 0 → waves sit in bottom ~130px (ambient ripples)
+     *   ease = 1 → waves are fully above the canvas top (submerged)
+     */
+    const bgBase  = (1 - ease) * (canvasH - 120) + ease * -45;
+    const midBase = (1 - ease) * (canvasH - 95)  + ease * -28;
+    const fgBase  = (1 - ease) * (canvasH - 72)  + ease * -14;
+
+    /* Front wave parameters (same freq/amp used for ark positioning) */
+    const fgFreq = 2.2, fgAmp = 14;
+
+    /* Ark: sit on front wave at horizontal center */
+    const arkX = canvasW * 0.5;
+    const arkY = fgBase + Math.sin((arkX / canvasW) * Math.PI * 2 * fgFreq + wavePhase) * fgAmp;
+
+    /* Tilt: finite-difference slope of wave at ark position, dampened */
+    const sampleDx = 55;
+    const slopeY1  = fgBase + Math.sin(((arkX - sampleDx) / canvasW) * Math.PI * 2 * fgFreq + wavePhase) * fgAmp;
+    const slopeY2  = fgBase + Math.sin(((arkX + sampleDx) / canvasW) * Math.PI * 2 * fgFreq + wavePhase) * fgAmp;
+    const tilt     = Math.atan2(slopeY2 - slopeY1, sampleDx * 2) * 0.45;
+
+    /* Scale: responsive to canvas width, clamped */
+    const arkScale = Math.max(0.38, Math.min(canvasW / 980, 0.82));
+
+    /*
+     * Ark alpha: fully visible at ease < 0.35, fades to 0 by ease = 0.65.
+     * This prevents the rising ark from overlapping the hero text.
+     */
+    const arkAlpha = ease < 0.35 ? 1 : Math.max(0, 1 - (ease - 0.35) / 0.30);
+
+    /* 1. Back wave */
+    drawWave('rgba(0,  80, 160, 0.50)', bgBase,  30, 1.4, Math.PI * 0.45);
+
+    /* 2. Mid wave */
+    drawWave('rgba(0, 160, 180, 0.58)', midBase, 22, 1.8, Math.PI * 0.20);
+
+    /* 3. Ark hull (below waterline — front wave will cover it) */
+    if (arkAlpha > 0.01) {
+      ctx.globalAlpha = arkAlpha;
+      drawArkHull(arkX, arkY, tilt, arkScale);
+      ctx.globalAlpha = 1;
+    }
+
+    /* 4. Front wave (washes over the hull) */
+    drawWave('rgba(0, 201, 177, 0.72)', fgBase, fgAmp, fgFreq, 0);
+
+    /* 5. Ark superstructure (above waterline — sits on top of front wave) */
+    if (arkAlpha > 0.01) {
+      ctx.globalAlpha = arkAlpha;
+      drawArkTop(arkX, arkY, tilt, arkScale);
+      ctx.globalAlpha = 1;
+    }
+
+    requestAnimationFrame(animate);
+  }
+  animate();
+
+  /* ── Scroll driver ── */
+  function onScroll() {
+    const scrollable = heroEl.offsetHeight - window.innerHeight;
+    scrollProg = scrollable > 0
+      ? Math.min(Math.max(window.scrollY / scrollable, 0), 1)
+      : 0;
+
+    /* Background + nav flip at ~27% scroll */
+    const flooded = scrollProg > 0.27;
+    heroStage.classList.toggle('flooded', flooded);
+    navbar.classList.toggle('flooded', flooded);
+    navbar.classList.toggle('scrolled', window.scrollY > 20 && !flooded);
+    themeColor.content = flooded ? '#020C1E' : '#EDF3FF';
+
+    scrollHint.classList.toggle('gone', scrollProg > 0.04);
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+
+  /* ── Mobile nav ── */
+  const hamburger  = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobileMenu');
 
   function openMenu() {
     mobileMenu.style.display = 'flex';
@@ -916,216 +990,42 @@
     hamburger.setAttribute('aria-expanded', 'true');
     document.body.style.overflow = 'hidden';
   }
-
   function closeMenu() {
     mobileMenu.style.display = 'none';
     hamburger.classList.remove('open');
     hamburger.setAttribute('aria-expanded', 'false');
     document.body.style.overflow = '';
   }
-
-  hamburger.addEventListener('click', () => {
-    mobileMenu.style.display === 'flex' ? closeMenu() : openMenu();
-  });
-
-  ['m-services', 'm-about', 'm-faq', 'm-contact'].forEach(id => {
+  hamburger.addEventListener('click', () => mobileMenu.style.display === 'flex' ? closeMenu() : openMenu());
+  ['m-services','m-about','m-faq','m-contact'].forEach(id => {
     document.getElementById(id).addEventListener('click', closeMenu);
   });
 
-  /* ──────────────────────────────────────────────────────────
-     Canvas wave setup
-  ────────────────────────────────────────────────────────── */
-  const heroEl     = document.getElementById('hero');
-  const heroStage  = document.getElementById('heroStage');
-  const navbar     = document.getElementById('navbar');
-  const scrollHint = document.getElementById('scrollHint');
-  const themeColor = document.getElementById('themeColor');
-  const canvas     = document.getElementById('waveCanvas');
-  const ctx        = canvas.getContext('2d');
+  /* ── FAQ accordion ── */
+  document.querySelectorAll('.faq-question').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item   = btn.closest('.faq-item');
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(el => {
+        el.classList.remove('open');
+        el.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+      });
+      if (!isOpen) { item.classList.add('open'); btn.setAttribute('aria-expanded', 'true'); }
+    });
+  });
 
-  let wavePhase  = 0;
-  let scrollProg = 0;
-  let canvasW    = 0;
-  let canvasH    = 0;
-  let dpr        = 1;
+  /* ── IntersectionObserver (scroll-in animations) ── */
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('is-visible'); observer.unobserve(e.target); }
+    });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
 
-  function resizeCanvas() {
-    dpr     = Math.min(window.devicePixelRatio || 1, 2); // cap at 2× for perf
-    canvasW = canvas.offsetWidth;
-    canvasH = canvas.offsetHeight;
-    canvas.width  = canvasW * dpr;
-    canvas.height = canvasH * dpr;
-    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-  }
-
-  window.addEventListener('resize', resizeCanvas, { passive: true });
-  resizeCanvas();
-
-  /* ──────────────────────────────────────────────────────────
-     Mountain — drawn before waves so water covers it naturally.
-     Peak sits at ~60 % of canvas height; brand dark-purple palette.
-  ────────────────────────────────────────────────────────── */
-  function drawMountain() {
-    const cx    = canvasW / 2;
-    const peakY = canvasH * 0.60;
-
-    /* ── Main body ───────────────────────────────────────── */
-    ctx.beginPath();
-    ctx.moveTo(-20,            canvasH + 20);
-    ctx.lineTo(canvasW * 0.04, canvasH * 0.90);
-    ctx.lineTo(canvasW * 0.18, canvasH * 0.78);
-    ctx.lineTo(canvasW * 0.28, canvasH * 0.73);
-    ctx.lineTo(canvasW * 0.35, canvasH * 0.78);
-    ctx.lineTo(canvasW * 0.41, canvasH * 0.66);
-    ctx.lineTo(canvasW * 0.46, peakY + canvasH * 0.06);
-    ctx.lineTo(cx,             peakY);                   // ← main peak
-    ctx.lineTo(canvasW * 0.55, peakY + canvasH * 0.055);
-    ctx.lineTo(canvasW * 0.60, canvasH * 0.65);
-    ctx.lineTo(canvasW * 0.67, canvasH * 0.72);
-    ctx.lineTo(canvasW * 0.73, canvasH * 0.67);
-    ctx.lineTo(canvasW * 0.82, canvasH * 0.77);
-    ctx.lineTo(canvasW * 0.96, canvasH * 0.90);
-    ctx.lineTo(canvasW + 20,   canvasH + 20);
-    ctx.closePath();
-
-    const grad = ctx.createLinearGradient(cx, peakY, cx, canvasH);
-    grad.addColorStop(0,   '#26215C');
-    grad.addColorStop(0.5, '#1c1840');
-    grad.addColorStop(1,   '#0f0d28');
-    ctx.fillStyle = grad;
-    ctx.fill();
-
-    /* ── Right sunlit face ───────────────────────────────── */
-    ctx.beginPath();
-    ctx.moveTo(cx,             peakY);
-    ctx.lineTo(canvasW * 0.55, peakY + canvasH * 0.055);
-    ctx.lineTo(canvasW * 0.53, canvasH * 0.70);
-    ctx.lineTo(cx + 18,        peakY + canvasH * 0.10);
-    ctx.closePath();
-    ctx.fillStyle = 'rgba(83, 74, 183, 0.38)';
-    ctx.fill();
-
-    /* ── Left edge highlight ─────────────────────────────── */
-    ctx.beginPath();
-    ctx.moveTo(cx,             peakY);
-    ctx.lineTo(canvasW * 0.46, peakY + canvasH * 0.06);
-    ctx.lineTo(canvasW * 0.47, canvasH * 0.70);
-    ctx.lineTo(cx - 16,        peakY + canvasH * 0.09);
-    ctx.closePath();
-    ctx.fillStyle = 'rgba(255, 255, 255, 0.05)';
-    ctx.fill();
-
-    /* ── Snow cap — fades as the water rises ─────────────── */
-    const snowAlpha = Math.max(0, 1 - scrollProg * 9);
-    if (snowAlpha > 0.01) {
-      ctx.beginPath();
-      ctx.moveTo(cx,                    peakY);
-      ctx.lineTo(cx + canvasW * 0.024,  peakY + canvasH * 0.042);
-      ctx.lineTo(cx - canvasW * 0.018,  peakY + canvasH * 0.036);
-      ctx.closePath();
-      ctx.fillStyle = `rgba(255, 255, 255, ${snowAlpha * 0.78})`;
-      ctx.fill();
-    }
-  }
-
-  /* ──────────────────────────────────────────────────────────
-     Draw one wave layer
-     color    — fill colour
-     baseY    — crest Y position (logical px; 0 = top, canvasH = bottom)
-     amp      — wave amplitude
-     freq     — how many full wave cycles across the canvas width
-     phaseOff — phase offset for parallax differentiation
-  ────────────────────────────────────────────────────────── */
-  function drawWave(color, baseY, amp, freq, phaseOff) {
-    ctx.beginPath();
-    ctx.moveTo(0, canvasH);
-
-    const step = 3;
-    for (let x = 0; x <= canvasW; x += step) {
-      const angle = (x / canvasW) * Math.PI * 2 * freq + wavePhase + phaseOff;
-      const y     = baseY + Math.sin(angle) * amp;
-      ctx.lineTo(x, y);
-    }
-
-    ctx.lineTo(canvasW, canvasH);
-    ctx.closePath();
-    ctx.fillStyle = color;
-    ctx.fill();
-  }
-
-  /* ──────────────────────────────────────────────────────────
-     Animation loop (requestAnimationFrame)
-  ────────────────────────────────────────────────────────── */
-  function animate() {
-    wavePhase += 0.02;  // wave oscillation speed
-
-    ctx.clearRect(0, 0, canvasW, canvasH);
-
-    // Mountain always visible — water covers it as progress increases
-    drawMountain();
-
-    if (scrollProg > 0.005) {
-      /* Map scroll 0→0.38 → ease 0→1 for a brisk but cinematic flood */
-      const t    = Math.min(scrollProg / 0.38, 1);
-      const ease = t < 0.5
-        ? 2 * t * t
-        : 1 - Math.pow(-2 * t + 2, 2) / 2;  // ease-in-out quad
-
-      /* Background wave: deeper colour, slightly slower rise */
-      const bgBase = canvasH - ease * canvasH * 1.06;
-      drawWave('#0077B6', bgBase, 24, 1.5, Math.PI * 0.45);
-
-      /* Foreground wave: bright aqua, faster rise */
-      const fgBase = canvasH - ease * canvasH * 1.14;
-      drawWave('#00B4D8', fgBase, 17, 2.0, 0);
-    }
-
-    requestAnimationFrame(animate);
-  }
-
-  animate();
-
-  /* ──────────────────────────────────────────────────────────
-     Scroll listener — drives water level + colour transition
-     passive: true is required for smooth 60fps on mobile
-  ────────────────────────────────────────────────────────── */
-  function onScroll() {
-    const scrollable = heroEl.offsetHeight - window.innerHeight;
-    scrollProg = scrollable > 0
-      ? Math.min(Math.max(window.scrollY / scrollable, 0), 1)
-      : 0;
-
-    /* Flood colour flip at ~28% scroll progress */
-    const flooded = scrollProg > 0.27;
-    heroStage.classList.toggle('flooded', flooded);
-    navbar.classList.toggle('dark', flooded);
-
-    /* Update browser theme-color for Android Chrome */
-    themeColor.content = flooded ? '#023E8A' : '#ffffff';
-
-    /* Hide scroll hint after tiny scroll */
-    scrollHint.classList.toggle('gone', scrollProg > 0.04);
-  }
-
-  window.addEventListener('scroll', onScroll, { passive: true });
-
-  /* ──────────────────────────────────────────────────────────
-     Also update on visualViewport resize (iOS keyboard open/close,
-     address bar show/hide), which doesn't always fire 'resize'
-  ────────────────────────────────────────────────────────── */
-  if (window.visualViewport) {
-    window.visualViewport.addEventListener('resize', () => {
-      setVH();
-      resizeCanvas();
-    }, { passive: true });
-  }
-
-  /* ──────────────────────────────────────────────────────────
-     Contact form
-  ────────────────────────────────────────────────────────── */
-  const contactForm   = document.getElementById('contactForm');
-  const formSubmit    = document.getElementById('formSubmit');
-  const formStatus    = document.getElementById('formStatus');
+  /* ── Contact form ── */
+  const contactForm = document.getElementById('contactForm');
+  const formSubmit  = document.getElementById('formSubmit');
+  const formStatus  = document.getElementById('formStatus');
 
   contactForm.addEventListener('submit', async (e) => {
     e.preventDefault();
@@ -1133,7 +1033,6 @@
     formStatus.textContent = '';
     formSubmit.disabled = true;
     formSubmit.textContent = 'Sending…';
-
     const body = {
       name:    document.getElementById('cf-name').value.trim(),
       email:   document.getElementById('cf-email').value.trim(),
@@ -1141,21 +1040,14 @@
       company: document.getElementById('cf-company').value.trim(),
       message: document.getElementById('cf-message').value.trim(),
     };
-
     try {
-      const res = await fetch('/api/contact', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(body),
-      });
+      const res  = await fetch('/api/contact', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body) });
       const data = await res.json();
       if (res.ok) {
         formStatus.className = 'form-status success';
         formStatus.textContent = "Message sent! We'll be in touch shortly.";
         contactForm.reset();
-      } else {
-        throw new Error(data.error || 'Something went wrong.');
-      }
+      } else { throw new Error(data.error || 'Something went wrong.'); }
     } catch (err) {
       formStatus.className = 'form-status error';
       formStatus.textContent = err.message || 'Failed to send. Please email us directly at hello@buildark.io.';
