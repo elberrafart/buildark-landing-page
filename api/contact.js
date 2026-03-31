@@ -134,7 +134,7 @@ export default async function handler(req, res) {
       headers: { 'Authorization': `Bearer ${apiKey}`, 'Content-Type': 'application/json' },
       body: JSON.stringify({
         from: 'BuildArk Contact <hello@buildark.dev>',
-        to: ['rafartelber@gmail.com'],
+        to: ['raz@buildark.dev'],
         subject: `New inquiry from ${name}`,
         html: notificationHtml,
       }),
