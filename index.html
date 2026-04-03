@@ -167,6 +167,23 @@
       background: var(--teal) !important; color: #fff !important;
     }
 
+    .nav-book {
+      padding: 0.45rem 1.2rem !important; border-radius: 50px !important;
+      background: transparent !important; color: var(--teal) !important;
+      border: 1.5px solid var(--teal) !important;
+      transition: background 0.2s, color 0.2s, box-shadow 0.2s !important;
+    }
+    .nav-book:hover {
+      background: var(--teal) !important; color: #fff !important;
+      box-shadow: 0 0 20px rgba(0, 175, 162, 0.3) !important;
+    }
+    #navbar.flooded .nav-book {
+      color: var(--teal) !important; border-color: var(--teal) !important;
+    }
+    #navbar.flooded .nav-book:hover {
+      background: var(--teal) !important; color: #fff !important;
+    }
+
     .nav-hamburger {
       display: none; flex-direction: column; gap: 5px;
       background: none; border: none; padding: 10px; margin: -10px;
@@ -512,6 +529,7 @@
     <li><a href="#services">Services</a></li>
     <li><a href="#about">About</a></li>
     <li><a href="#faq">FAQ</a></li>
+    <li><a href="https://bookings.buildark.dev" class="nav-book">Book a Call</a></li>
     <li><a href="#contact" class="nav-cta">Let's Talk</a></li>
   </ul>
   <button class="nav-hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
@@ -523,6 +541,7 @@
   <a href="#services" id="m-services">Services</a>
   <a href="#about"    id="m-about">About</a>
   <a href="#faq"      id="m-faq">FAQ</a>
+  <a href="https://bookings.buildark.dev" id="m-book" style="color: var(--teal); font-weight: 600;">Book a Call</a>
   <a href="#contact"  id="m-contact" class="cta-mobile">Let's Talk</a>
 </div>
 

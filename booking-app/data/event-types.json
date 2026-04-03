@@ -1,0 +1,28 @@
+[
+  {
+    "id": "et-1",
+    "slug": "discovery-call",
+    "name": "Discovery Call",
+    "description": "A 30-minute intro call to explore how BuildArk can help your project.",
+    "duration_minutes": 30,
+    "buffer_before_minutes": 0,
+    "buffer_after_minutes": 10,
+    "color": "#00B4D8",
+    "is_active": true,
+    "location_type": "google_meet",
+    "created_at": "2024-01-01T00:00:00Z"
+  },
+  {
+    "id": "et-2",
+    "slug": "project-kickoff",
+    "name": "Project Kickoff",
+    "description": "A 60-minute deep-dive to kick off your project with Raz.",
+    "duration_minutes": 60,
+    "buffer_before_minutes": 5,
+    "buffer_after_minutes": 15,
+    "color": "#F4A261",
+    "is_active": true,
+    "location_type": "google_meet",
+    "created_at": "2024-01-01T00:00:00Z"
+  }
+]

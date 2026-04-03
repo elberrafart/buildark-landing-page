@@ -1,0 +1,51 @@
+[
+  {
+    "id": "avail-0",
+    "day_of_week": 0,
+    "start_time": "09:00",
+    "end_time": "17:00",
+    "is_active": false
+  },
+  {
+    "id": "avail-1",
+    "day_of_week": 1,
+    "start_time": "09:00",
+    "end_time": "17:00",
+    "is_active": true
+  },
+  {
+    "id": "avail-2",
+    "day_of_week": 2,
+    "start_time": "09:00",
+    "end_time": "17:00",
+    "is_active": true
+  },
+  {
+    "id": "avail-3",
+    "day_of_week": 3,
+    "start_time": "09:00",
+    "end_time": "17:00",
+    "is_active": true
+  },
+  {
+    "id": "avail-4",
+    "day_of_week": 4,
+    "start_time": "09:00",
+    "end_time": "17:00",
+    "is_active": true
+  },
+  {
+    "id": "avail-5",
+    "day_of_week": 5,
+    "start_time": "09:00",
+    "end_time": "17:00",
+    "is_active": true
+  },
+  {
+    "id": "avail-6",
+    "day_of_week": 6,
+    "start_time": "09:00",
+    "end_time": "17:00",
+    "is_active": false
+  }
+]
