@@ -14,14 +14,47 @@ const dmSans = DM_Sans({
   display: 'swap',
 })
 
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'ProfessionalService',
+  name: 'BuildArk',
+  url: 'https://buildark.dev',
+  description:
+    'BuildArk is a boutique web development studio that builds custom apps, landing pages, and App Store products for small businesses.',
+  founder: { '@type': 'Person', name: 'Raz', email: 'raz@buildark.dev' },
+  slogan: 'We build the tools that carry your business forward',
+  knowsAbout: [
+    'Web Development',
+    'App Development',
+    'Next.js',
+    'Supabase',
+    'Vercel',
+  ],
+  areaServed: 'US',
+  email: 'raz@buildark.dev',
+}
+
 export const metadata: Metadata = {
-  title: 'Book a Call — BuildArk',
-  description: 'Schedule time with Raz at BuildArk. Discovery calls and project kickoffs.',
+  metadataBase: new URL('https://bookings.buildark.dev'),
+  title: {
+    default: 'Book a Call — BuildArk',
+    template: '%s — BuildArk',
+  },
+  description:
+    'Schedule a discovery call or project kickoff with Raz at BuildArk. Custom web and app development for small businesses.',
   openGraph: {
     title: 'Book a Call — BuildArk',
-    description: 'Schedule time with Raz at BuildArk.',
+    description:
+      'Schedule a discovery call or project kickoff with Raz at BuildArk.',
     url: 'https://bookings.buildark.dev',
     siteName: 'BuildArk Bookings',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+  },
+  alternates: {
+    canonical: '/',
   },
 }
 
@@ -33,6 +66,10 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${syne.variable} ${dmSans.variable}`}>
       <body className="font-dm antialiased">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         {children}
       </body>
     </html>

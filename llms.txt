@@ -1,0 +1,33 @@
+# BuildArk
+
+> We build the tools that carry your business forward.
+
+BuildArk is a boutique web development studio founded by Raz. We build custom websites, apps, and App Store products for small businesses, startups, and growing companies.
+
+## Services
+
+- **Custom Apps**: Tailored applications built to fit your exact business workflow — scheduling systems, internal tools, dashboards, and more.
+- **Web Presence**: Landing pages and full websites designed to look credible, load fast, and convert first-time visitors into loyal customers.
+- **App Store Products**: Consumer apps published on the App Store, built with the same craft and care we bring to every client project.
+
+## Ideal Client
+
+Small businesses and startups that:
+- Need a polished digital presence but lack in-house tech expertise
+- Are stuck with outdated workflows and want modern, custom tooling
+- Want a hands-on technology partner, not a faceless agency
+
+## Technologies
+
+- Next.js (React)
+- Supabase
+- Vercel
+- TypeScript
+- Tailwind CSS
+
+## Contact
+
+- Email: raz@buildark.dev
+- Instagram: @buildarksolutions
+- Website: https://buildark.dev
+- Bookings: https://bookings.buildark.dev
