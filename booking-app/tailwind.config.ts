@@ -25,7 +25,7 @@ const config: Config = {
         muted: '#64748B',
       },
       fontFamily: {
-        syne: ['Syne', 'sans-serif'],
+        syne: ['Plus Jakarta Sans', 'sans-serif'],
         dm: ['DM Sans', 'sans-serif'],
       },
     },
